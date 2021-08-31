@@ -85,7 +85,7 @@ public class LectorDeFicheros {
 	}
 
 	public ArrayList<Cliente> cargarClientes() {
-		ArrayList<String> arrayDeClientes = leerFichero("clientes.txt");
+		ArrayList<String> arrayDeClientes = leerFichero("res/entrada/clientes.txt");
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		for (int i = 0; i < arrayDeClientes.size(); i++) {
 			ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDeClientes.get(i).split(";")));
