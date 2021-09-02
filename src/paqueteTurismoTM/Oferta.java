@@ -1,9 +1,19 @@
 package paqueteTurismoTM;
 
 public abstract class Oferta {
-	private String nombre = "";
+	protected String nombre = "";
+	protected TipoAtraccion tipoAtraccion;
 	
-	public Oferta(String nombre) {
+	public Oferta(String nombre, TipoAtraccion tipoAtraccion) {
 		this.nombre = nombre;
+		this.tipoAtraccion = tipoAtraccion;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public TipoAtraccion getTipoAtraccion() {
+		return tipoAtraccion;
 	}
 }
