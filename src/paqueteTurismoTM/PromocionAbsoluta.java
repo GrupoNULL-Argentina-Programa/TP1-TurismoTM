@@ -11,8 +11,6 @@ public class PromocionAbsoluta extends Promocion{
 	
 	public int getCosto() {
 		return costo;
-	}
-	
-	
+	}	
 
 }
