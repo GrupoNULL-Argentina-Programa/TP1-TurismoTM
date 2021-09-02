@@ -1,13 +1,13 @@
 package paqueteTurismoTM;
 import java.util.ArrayList;
 
-public class Promociones extends Oferta{
+public class Promocion extends Oferta{
 	private ArrayList<Atraccion> atracciones;
 	private int costo; // puede heredarse
 	private double tiempo; // puede heredarse
 	private int cupoDisponible; // puede heredarse
 	
-	public Promociones(String nombre, TipoAtraccion tipoAtraccion, ArrayList<Atraccion> atracciones) {
+	public Promocion(String nombre, TipoAtraccion tipoAtraccion, ArrayList<Atraccion> atracciones) {
 		super (nombre, tipoAtraccion);
 		this.atracciones = new ArrayList<Atraccion>();
 	}
@@ -34,10 +34,6 @@ public class Promociones extends Oferta{
 		return atracciones;
 	}
 	
-	public TipoAtraccion getTipoAtraccion() {
-		return tipoAtraccion.name();
-	}
-	
 	public int getCupoDisponible() {
 		for (Atraccion a: atracciones) {
 			
@@ -46,7 +42,7 @@ public class Promociones extends Oferta{
 	
 	@Override
 	public String toString() {
-		return "Promocion [nombre=" + this.nombre + ", costo="+ this.getCosto() + ", tiempo="+ this.getTiempo() + ", tipoDeAtraccipon=" this.getTipoAtraccion()+ ", cupoDisponible="+ this.getCupoDisponible() + "]";
+		return "Promocion [nombre=" + this.nombre + ", costo="+ this.getCosto() + ", tiempo="+ this.getTiempo() + ", tipoDeAtraccipon="+  tipoAtraccion+ ", cupoDisponible="+ this.getCupoDisponible() + "]";
 	}
 	
 	public int compareTo(Oferta otraOferta) {
