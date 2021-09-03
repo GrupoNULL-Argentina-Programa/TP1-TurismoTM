@@ -11,6 +11,7 @@ public class PromocionAxB extends Promocion{
 		this.atraccionesGratis = new ArrayList<Atraccion>();
 	}
 	
+	//Se podria calcular solo el costo de las atracciones pagas?
 	@Override
 	public int getCosto() {
 		int descuento = 0;
