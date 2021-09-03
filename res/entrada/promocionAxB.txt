@@ -1,0 +1,2 @@
+PromocionesAxB1;PAISAJE;Minas Tirith,Abismo de Helm;Erebor
+PromocionesAxB2;AVENTURAE;Moria,Mordor;Bosque Negro

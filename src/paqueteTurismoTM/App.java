@@ -4,18 +4,27 @@ import java.util.*;
 public class App {
 
 	public static void main(String[] args) throws IOException {
-		LectorDeFicheros lector = new LectorDeFicheros();
-		ArrayList<Cliente> clientes = lector.cargarClientes();
-		for(Cliente cliente : clientes) {
-			System.out.println(cliente);
-		}
-		
+//		LectorDeFicheros lector = new LectorDeFicheros();
+//		ArrayList<Cliente> clientes = lector.cargarClientes();
+//		for(Cliente cliente : clientes) {
+//			System.out.println(cliente);
+//		}
+//		
 		/* Para probar el nuevo metodo responderPregunta()
 		 * escribir por consola una respuesta
 		 * Eowyn tiene hasta 3 intentos para contestar correctamente
 		 * sino, se rechaza la oferta automaticamente por boba
+		 * 
 		 */
-		System.out.println("\n El booleando retornado es: " + clientes.get(0).responderPregunta());
+		
+		LectorDeFicheros lector1 = new LectorDeFicheros();
+		ArrayList<PromocionAbsoluta> promAbsoluta = lector1.cargarPromocionAbsoluta();
+		for(PromocionAbsoluta promocion : promAbsoluta) {
+			System.out.println(promocion);
+		}
+		
+		
+//		System.out.println("\n El booleando retornado es: " + clientes.get(0).responderPregunta());
 	}
 
 }

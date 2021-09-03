@@ -2,21 +2,23 @@ package paqueteTurismoTM;
 
 import java.util.ArrayList;
 
-public class PromocionAbsoluta extends Promocion {
-	private int costo = 0;
 
-	public PromocionAbsoluta(String nombre, TipoAtraccion tipoAtraccion, ArrayList<Atraccion> atracciones, int costo) {
-		super(nombre, tipoAtraccion, atracciones);
+public class PromocionAbsoluta extends Promocion{
+	
+	public PromocionAbsoluta(String nombre, TipoAtraccion tipoAtraccion, int costo,double tiempo, ArrayList<String> atracciones) {
+		super(nombre, tipoAtraccion, tiempo, atracciones);
 		this.costo = costo;
 	}
-
-	public int getCosto() {
+	
+	public int getCosto(ArrayList<Atraccion> listaAtracciones) {
 		return costo;
 	}
 
 	@Override
 	public String toString() {
-		return "Promocion [nombre=" + this.nombre + ", costo=" + this.getCosto() + ", tiempo=" + this.getTiempo()
-				+ ", tipoDeAtraccipon=" + tipoAtraccion + ", cupoDisponible=" + "]";
+		return "PromocionAbsoluta [atracciones=" + atracciones + ", costo=" + costo + 
+				", tiempo total=" + tiempo + " ,nombre=" + nombre
+				+ ", tipoAtraccion=" + tipoAtraccion + "]";
 	}
+
 }

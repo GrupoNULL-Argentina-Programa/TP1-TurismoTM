@@ -1,6 +1,9 @@
 package paqueteTurismoTM;
 
 import java.util.*;
+
+//import com.sun.tools.javac.code.Attribute.Array;
+
 import java.io.*;
 
 public class LectorDeFicheros {
@@ -97,5 +100,38 @@ public class LectorDeFicheros {
 		}
 		return clientes;
 	}
+	
+	//Estos metodos no serian responsabilidad de tierra media?
+		public ArrayList<Atraccion> cargarAtraccion() {
+			ArrayList<String> arrayDeAtracciones = leerFichero("res/entrada/atracciones.txt");
+			ArrayList<Atraccion> atracciones = new ArrayList<Atraccion>();
+			for (int i = 0; i < arrayDeAtracciones.size(); i++) {
+				ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDeAtracciones.get(i).split(";")));
+				System.out.println(campos);
+				atracciones.add(new Atraccion(campos.get(0),
+						Integer.parseInt(campos.get(1)),
+						Double.parseDouble(campos.get(2)),
+						Integer.parseInt(campos.get(3)),
+						TipoAtraccion.valueOf(campos.get(4))));
+			}
+			return atracciones;
+		}
+		
+		public ArrayList<PromocionAbsoluta> cargarPromocionAbsoluta() {
+			ArrayList<String> arrayDePromAbs = leerFichero("res/entrada/promocionAbsoluta.txt");
+			ArrayList<PromocionAbsoluta> promociones = new ArrayList<PromocionAbsoluta>();
+			for (int i = 0; i < arrayDePromAbs.size(); i++) {
+				ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDePromAbs.get(i).split(";")));
+				System.out.println(campos);
+				ArrayList<String> arrayDeAtracciones;
+				promociones.add(new PromocionAbsoluta(campos.get(0),
+						TipoAtraccion.valueOf(campos.get(1)),
+						Integer.parseInt(campos.get(2)),
+						Double.parseDouble(campos.get(3)),
+						arrayDeAtracciones= new ArrayList<>(Arrays.asList(campos.get(4).split(",")))));			
+						
+			}
+			return promociones;
+		}
 
 }
