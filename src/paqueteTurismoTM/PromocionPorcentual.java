@@ -25,16 +25,16 @@ public class PromocionPorcentual extends Promocion {
 		return (int) (costo * (1 - descuento));
 	}
 	
-	public int getTiempo(ArrayList<Atraccion> listaAtracciones) {
-		for (String a : atracciones) {
-			for (Atraccion b : listaAtracciones) {
-				if (a == b.nombre) {
-					tiempo += b.getTiempo();
-				}
-			}
-
-		}
-		return (int) tiempo;
-	}
+//	public int getTiempo(ArrayList<Atraccion> listaAtracciones) {
+//		for (String a : atracciones) {
+//			for (Atraccion b : listaAtracciones) {
+//				if (a == b.nombre) {
+//					tiempo += b.getTiempo();
+//				}
+//			}
+//
+//		}
+//		return (int) tiempo;
+//	}
 
 }

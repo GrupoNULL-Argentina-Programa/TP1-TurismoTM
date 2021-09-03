@@ -127,7 +127,7 @@ public class LectorDeFicheros {
 				promociones.add(new PromocionAbsoluta(campos.get(0),
 						TipoAtraccion.valueOf(campos.get(1)),
 						Integer.parseInt(campos.get(2)),
-						Double.parseDouble(campos.get(3)),						
+						Double.parseDouble(campos.get(3)),
 						arrayDeAtracciones= new ArrayList<>(Arrays.asList(campos.get(4).split(",")))));			
 						
 			}
