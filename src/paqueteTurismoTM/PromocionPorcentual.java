@@ -6,6 +6,7 @@ public class PromocionPorcentual extends Promocion {
 
 	private double descuento;// decimal
 
+
 	public PromocionPorcentual(String nombre, TipoAtraccion tipoAtraccion, double descuento, double tiempo,
 			ArrayList<String> atracciones) {
 		super(nombre, tipoAtraccion, tiempo, atracciones);
@@ -20,6 +21,7 @@ public class PromocionPorcentual extends Promocion {
 					costo += b.getCosto();
 				}
 			}
+
 
 		}
 		return (int) (costo * (1 - descuento));
@@ -37,4 +39,9 @@ public class PromocionPorcentual extends Promocion {
 //		return (int) tiempo;
 //	}
 
+	@Override
+	public String toString() {
+		return "Promocion [nombre=" + this.nombre + ", costo=" + this.getCosto() + ", tiempo=" + this.getTiempo()
+				+ ", tipoDeAtraccipon=" + tipoAtraccion + ", cupoDisponible=" + "]";
+	}
 }

@@ -2,6 +2,7 @@ package paqueteTurismoTM;
 
 import java.util.ArrayList;
 
+
 public class PromocionAbsoluta extends Promocion{
 	
 	public PromocionAbsoluta(String nombre, TipoAtraccion tipoAtraccion, int costo,double tiempo, ArrayList<String> atracciones) {
@@ -19,7 +20,5 @@ public class PromocionAbsoluta extends Promocion{
 				", tiempo total=" + tiempo + " ,nombre=" + nombre
 				+ ", tipoAtraccion=" + tipoAtraccion + "]";
 	}
-	
-	
 
 }
