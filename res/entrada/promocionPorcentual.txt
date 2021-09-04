@@ -1,2 +1,2 @@
-PromocionPorcentual1;AVENTURA;0.20;7;Bosque Negro,Mordor
-PromocionPorcentual2;AVENTURA;0.30;5;Moria,Mordor  
+PromocionPorcentual1;AVENTURA;0.20;Bosque Negro,Mordor
+PromocionPorcentual2;AVENTURA;0.30;Moria,Mordor  

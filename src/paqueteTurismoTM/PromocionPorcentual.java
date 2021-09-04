@@ -7,9 +7,9 @@ public class PromocionPorcentual extends Promocion {
 	private double descuento;// decimal
 
 
-	public PromocionPorcentual(String nombre, TipoAtraccion tipoAtraccion, double descuento, double tiempo,
-			ArrayList<String> atracciones) {
-		super(nombre, tipoAtraccion, tiempo, atracciones);
+	public PromocionPorcentual(String nombre, TipoAtraccion tipoAtraccion, 
+			ArrayList<String> atracciones,double descuento) {
+		super(nombre, tipoAtraccion, atracciones);
 		this.descuento = descuento;
 	}
 
@@ -21,8 +21,6 @@ public class PromocionPorcentual extends Promocion {
 					costo += b.getCosto();
 				}
 			}
-
-
 		}
 		return (int) (costo * (1 - descuento));
 	}

@@ -1,2 +1,2 @@
-PromocionAbsoluta1;DEGUSTACION;36;7.5;Lothlórien,La Comarca
-PromocionAbsoluta2;PAISAJE;15;5.5;Erebor,Minas Tirith
+PromocionAbsoluta1;DEGUSTACION;36;Lothlorien,La Comarca
+PromocionAbsoluta2;PAISAJE;15;Erebor,Minas Tirith

@@ -4,14 +4,13 @@ import java.util.ArrayList;
 
 
 public abstract class Promocion extends Oferta{
-		protected ArrayList<String> atracciones;
+	protected ArrayList<String> atracciones;
 	protected int costo; // puede heredarse
-	protected double tiempo; // puede heredarse
+	protected double tiempoTotal; // puede heredarse
 	protected int cupoDisponible; // puede heredarse
   
-	public Promocion(String nombre, TipoAtraccion tipoAtraccion, double tiempo, ArrayList<String> atracciones) {
+	public Promocion(String nombre, TipoAtraccion tipoAtraccion, ArrayList<String> atracciones) {
 		super (nombre, tipoAtraccion);
-		this.tiempo=tiempo;
 		this.atracciones = atracciones;
 	}
 
@@ -26,30 +25,31 @@ public abstract class Promocion extends Oferta{
 		public int getTiempo(ArrayList<Atraccion> listaAtracciones) {
 		for (String a : atracciones) {
 			for (Atraccion b : listaAtracciones) {
-				if (a == b.nombre) {
-					tiempo += b.getTiempo();
+				if (a.equals(b.nombre)) {
+					tiempoTotal += b.getTiempo();
 				}
 			}
-
 		}
-		return (int) tiempo;
+		return (int) tiempoTotal;
 	}
+		
+		
 
-	public ArrayList<Atraccion> getAtracciones() {
-		return atracciones;
-	}
-
-	public int getCupoDisponible() {
-		int cupoDisponible = 0;
-		for (Atraccion a : atracciones) {
-			cupoDisponible = a.getCuposDisponible();
-		}
-		return cupoDisponible;
-	}
-
-	public int compareTo(Oferta otraOferta) {
-		return 0;
-	}
+//	public ArrayList<Atraccion> getAtracciones() {
+//		return atracciones;
+//	}
+//
+//	public int getCupoDisponible() {
+//		int cupoDisponible = 0;
+//		for (Atraccion a : atracciones) {
+//			cupoDisponible = a.getCuposDisponible();
+//		}
+//		return cupoDisponible;
+//	}
+//
+//	public int compareTo(Oferta otraOferta) {
+//		return 0;
+//	}
 
 
 }
