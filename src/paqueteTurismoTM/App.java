@@ -25,7 +25,7 @@ public class App {
 		System.out.println();
 
 		LectorDeFicheros lector2 = new LectorDeFicheros();
-		Archivo.ofertas = lector2.cargarPromocionAbsoluta();
+		Archivo.ofertas.addAll(lector2.cargarPromocionAbsoluta());
 		for (Oferta promocion : Archivo.ofertas) {
 			System.out.println(promocion);
 		}

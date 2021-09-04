@@ -1,9 +1,8 @@
 package paqueteTurismoTM;
 
-import java.util.ArrayList;
-
 public abstract class Oferta {
 	protected String nombre = "";
+	protected double tiempo;
 	protected TipoAtraccion tipoAtraccion;
 
 	public Oferta(String nombre, TipoAtraccion tipoAtraccion) {

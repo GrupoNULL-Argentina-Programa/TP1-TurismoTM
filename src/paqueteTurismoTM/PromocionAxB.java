@@ -22,10 +22,5 @@ public class PromocionAxB extends Promocion {
 		return "Promocion [nombre=" + this.nombre + ", costo=" + this.getCosto() + ", tiempo=" + this.getTiempo()
 				+ ", tipoDeAtraccipon=" + tipoAtraccion + ", cupoDisponible=" + "]";
 	}
-
-	@Override
-	protected int getCosto(ArrayList<Atraccion> listaAtracciones) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 }

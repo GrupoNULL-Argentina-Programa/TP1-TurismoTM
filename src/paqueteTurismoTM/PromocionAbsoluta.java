@@ -16,14 +16,12 @@ public class PromocionAbsoluta extends Promocion{
 
 	@Override
 	public String toString() {
-		return "PromocionAbsoluta [atracciones=" + atracciones + ", costo=" + costo + 
-				", tiempo total=" + tiempoTotal + " ,nombre=" + nombre
-				+ ", tipoAtraccion=" + tipoAtraccion + "]";
+		return "" + nombre + " contiene las siguientes atracciones " + "[" + tipoAtraccion + "]:" + "\n\t" + atracciones + "\n\tSu costo total es de " + costo + " monedas de oro" + 
+				"\n\tEl tiempo total necesario es de " + this.getTiempo() + " Hs.";
 	}
 
-	@Override
-	protected int getCosto() {
-		// TODO Auto-generated method stub
+
+	public int getCosto() {
 		return 0;
 	}
 

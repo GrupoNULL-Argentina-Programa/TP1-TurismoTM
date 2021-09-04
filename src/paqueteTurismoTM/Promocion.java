@@ -16,20 +16,21 @@ public abstract class Promocion extends Oferta{
 	public String getNombre() {
 		return nombre;
 	}
-	
-	protected abstract int getCosto(ArrayList<Atraccion> listaAtracciones);
 
-
-
-		public double getTiempo() {
+	public double getTiempo() {
+		double tiempoTotal = 0;
 		for (String a : atracciones) {
 			for (Oferta b : Archivo.ofertas) {
 				if (a.equals(b.nombre)) {
-					tiempoTotal += b.getTiempo();
+					tiempoTotal += b.tiempo;
 				}
 			}
 		}
 		return tiempoTotal;
+	}
+	
+	public int getCosto() {
+		return 0;
 	}
 		
 		

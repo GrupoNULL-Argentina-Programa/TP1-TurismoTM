@@ -24,18 +24,6 @@ public class PromocionPorcentual extends Promocion {
 		}
 		return (int) (costo * (1 - descuento));
 	}
-	
-//	public int getTiempo(ArrayList<Atraccion> listaAtracciones) {
-//		for (String a : atracciones) {
-//			for (Atraccion b : listaAtracciones) {
-//				if (a == b.nombre) {
-//					tiempo += b.getTiempo();
-//				}
-//			}
-//
-//		}
-//		return (int) tiempo;
-//	}
 
 	@Override
 	public String toString() {
@@ -43,10 +31,4 @@ public class PromocionPorcentual extends Promocion {
 				+ ", tipoDeAtraccipon=" + tipoAtraccion + ", cupoDisponible=" + "]";
 	}
 
-
-	@Override
-	protected int getCosto(ArrayList<Atraccion> listaAtracciones) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }
