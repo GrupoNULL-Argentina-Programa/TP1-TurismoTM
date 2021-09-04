@@ -12,12 +12,14 @@ public class Ofertable {
 		return false;
 	}
 
-	public static boolean hayOfertaDisponible(boolean esNuevoCliente) {
+	public static boolean hayOfertaDisponible(Cliente unCliente, boolean esNuevoCliente) {
 		return false;
 	}
 
-	public static boolean getOferta(boolean unCliente) {
-		return false;
+	public static Oferta getOferta(Cliente unCliente, boolean nuevoCliente) {
+		Oferta unaOferta = new Atraccion("unNombre", 0, 0.0, 0, TipoAtraccion.valueOf("AVENTURA"));
+
+		return unaOferta;
 	}
 
 	public static void resetearArrayCopia() {

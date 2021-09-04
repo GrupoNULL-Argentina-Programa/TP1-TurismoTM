@@ -7,7 +7,7 @@ public class Atraccion extends Oferta {
 	private final int CUPO_TOTAL = 0;
 	private int cuposDisponible;
 
-	public Atraccion(String nombre, int costo, double tiempo, int cuposDisponible, TipoAtraccion tipoAtraccion) {	
+	public Atraccion(String nombre, int costo, double tiempo, int cuposDisponible, TipoAtraccion tipoAtraccion) {
 		super(nombre, tipoAtraccion);
 		this.costo = costo;
 		this.tiempo = tiempo;
@@ -24,6 +24,11 @@ public class Atraccion extends Oferta {
 
 	public int getCuposDisponible() {
 		return cuposDisponible;
+	}
+
+	public void venderUnCupo() {
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override

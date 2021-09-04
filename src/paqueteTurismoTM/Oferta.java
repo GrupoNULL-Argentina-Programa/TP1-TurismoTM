@@ -16,4 +16,9 @@ public abstract class Oferta {
 	public TipoAtraccion getTipoAtraccion() {
 		return tipoAtraccion;
 	}
+
+	public void venderUnCupo() {
+		// TODO Auto-generated method stub
+
+	}
 }

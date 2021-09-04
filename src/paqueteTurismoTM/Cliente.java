@@ -19,6 +19,21 @@ public class Cliente {
 		this.tiempo = tiempo;
 	}
 
+	public void comprarOferta(Oferta unaOferta) {
+		descontarOroYTiempo(unaOferta);
+		agregarAItinerario(unaOferta);
+	}
+
+	private void agregarAItinerario(Oferta unaOferta) {
+		// TODO Auto-generated method stub
+
+	}
+
+	private void descontarOroYTiempo(Oferta unaOferta) {
+		// TODO Auto-generated method stub
+
+	}
+
 	@Override
 	public String toString() {
 		return "Cliente [nombre=" + nombre + ", preferencia=" + preferencia + ", presupuesto=" + presupuesto
@@ -38,14 +53,16 @@ public class Cliente {
 
 		laRespuesta = br.readLine();
 		laRespuesta = laRespuesta.toLowerCase();
-		
-		for(int intentos = 3; intentos >= 1; intentos--) {
-			if(laRespuesta.equals("si") || laRespuesta.equals("s")) {
+
+		for (int intentos = 3; intentos >= 1; intentos--) {
+			if (laRespuesta.equals("si") || laRespuesta.equals("s")) {
 				r = true;
-			} else if(laRespuesta.equals("no") || laRespuesta.equals("n")) {
+			} else if (laRespuesta.equals("no") || laRespuesta.equals("n")) {
 				r = false;
-			} else if (intentos > 1){
-				System.out.println(".. la respuesta ingresada es incorrecta, debe contestar con 'Si' o 'No' (intentos restantes " + (intentos-1) + ")");
+			} else if (intentos > 1) {
+				System.out.println(
+						".. la respuesta ingresada es incorrecta, debe contestar con 'Si' o 'No' (intentos restantes "
+								+ (intentos - 1) + ")");
 				laRespuesta = br.readLine();
 				laRespuesta = laRespuesta.toLowerCase();
 			} else {
@@ -54,6 +71,5 @@ public class Cliente {
 		}
 		return r;
 	}
-	
-	
+
 }
