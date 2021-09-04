@@ -1,5 +1,7 @@
 package paqueteTurismoTM;
 
+import java.util.ArrayList;
+
 public abstract class Oferta {
 	protected String nombre = "";
 	protected TipoAtraccion tipoAtraccion;
@@ -21,4 +23,8 @@ public abstract class Oferta {
 		// TODO Auto-generated method stub
 
 	}
+
+	protected abstract int getCosto();
+
+	protected abstract double getTiempo();
 }

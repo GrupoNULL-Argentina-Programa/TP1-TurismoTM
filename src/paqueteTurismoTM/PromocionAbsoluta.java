@@ -21,4 +21,10 @@ public class PromocionAbsoluta extends Promocion{
 				+ ", tipoAtraccion=" + tipoAtraccion + "]";
 	}
 
+	@Override
+	protected int getCosto() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

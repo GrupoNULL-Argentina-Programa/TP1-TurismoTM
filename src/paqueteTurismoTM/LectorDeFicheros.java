@@ -62,6 +62,8 @@ public class LectorDeFicheros {
 	public ArrayList<String> leerFichero(String directorio) {
 
 		ArrayList<String> arrayLineas = new ArrayList<String>();
+		
+		
 		try {
 			archivo = new File(directorio);
 			fr = new FileReader(archivo);
@@ -100,9 +102,9 @@ public class LectorDeFicheros {
 	}
 
 	// Estos metodos no serian responsabilidad de tierra media?
-	public ArrayList<Atraccion> cargarAtraccion() {
+	public ArrayList<Oferta> cargarAtraccion() {
 		ArrayList<String> arrayDeAtracciones = leerFichero("res/entrada/atracciones.txt");
-		ArrayList<Atraccion> atracciones = new ArrayList<Atraccion>();
+		ArrayList<Oferta> atracciones = new ArrayList<Oferta>();
 		for (int i = 0; i < arrayDeAtracciones.size(); i++) {
 			ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDeAtracciones.get(i).split(";")));
 			System.out.println(campos);
@@ -113,9 +115,9 @@ public class LectorDeFicheros {
 		return atracciones;
 	}
 
-	public ArrayList<PromocionAbsoluta> cargarPromocionAbsoluta() {
+	public ArrayList<Oferta> cargarPromocionAbsoluta() {
 		ArrayList<String> arrayDePromAbs = leerFichero("res/entrada/promocionAbsoluta.txt");
-		ArrayList<PromocionAbsoluta> promociones = new ArrayList<PromocionAbsoluta>();
+		ArrayList<Oferta> promociones = new ArrayList<Oferta>();
 		for (int i = 0; i < arrayDePromAbs.size(); i++) {
 			ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDePromAbs.get(i).split(";")));
 			System.out.println(campos);

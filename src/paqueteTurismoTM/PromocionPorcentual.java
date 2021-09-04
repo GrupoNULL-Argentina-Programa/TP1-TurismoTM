@@ -14,10 +14,10 @@ public class PromocionPorcentual extends Promocion {
 	}
 
 
-	public int getCosto(ArrayList<Atraccion> listaAtracciones) {
+	public int getCosto() {
 		for (String a : atracciones) {
-			for (Atraccion b : listaAtracciones) {
-				if (a == b.nombre) {
+			for (Oferta b : Archivo.ofertas) {
+				if (a == b.getNombre()) {
 					costo += b.getCosto();
 				}
 			}
@@ -41,5 +41,12 @@ public class PromocionPorcentual extends Promocion {
 	public String toString() {
 		return "Promocion [nombre=" + this.nombre + ", costo=" + this.getCosto() + ", tiempo=" + this.getTiempo()
 				+ ", tipoDeAtraccipon=" + tipoAtraccion + ", cupoDisponible=" + "]";
+	}
+
+
+	@Override
+	protected int getCosto(ArrayList<Atraccion> listaAtracciones) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
