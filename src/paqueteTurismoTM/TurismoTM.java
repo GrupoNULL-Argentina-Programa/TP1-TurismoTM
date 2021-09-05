@@ -19,7 +19,7 @@ public class TurismoTM {
 						mensajeQuieresComprarEsto(unaOferta);
 						if (unCliente.responderPregunta()) {
 							unCliente.comprarOferta(unaOferta);
-							unaOferta.venderUnCupo();
+							unaOferta.venderCupo();
 							mensajeQuieresVerOtraOferta();
 							seguirOfreciendo = unCliente.responderPregunta();
 							nuevoCliente = false;

@@ -1,6 +1,6 @@
 package paqueteTurismoTM;
 
-public abstract class Oferta {
+public abstract class Oferta implements Comparable {
 	protected String nombre = "";
 	protected double tiempo;
 	protected TipoAtraccion tipoAtraccion;
@@ -18,12 +18,11 @@ public abstract class Oferta {
 		return tipoAtraccion;
 	}
 
-	public void venderUnCupo() {
-		// TODO Auto-generated method stub
-
-	}
+	public abstract void venderCupo();
 
 	protected abstract int getCosto();
 
 	protected abstract double getTiempo();
+	
+	public abstract int compareTo(Oferta otraOferta);
 }

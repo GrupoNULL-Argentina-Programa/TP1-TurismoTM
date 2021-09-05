@@ -29,27 +29,31 @@ public abstract class Promocion extends Oferta{
 		return tiempoTotal;
 	}
 	
+	public void venderCupo() {
+		for (String a : atracciones) {
+			for(Oferta b : Archivo.ofertas)
+				if(a.equals(b.nombre))
+					b.venderCupo();
+			}
+	}
+	
 	public int getCosto() {
 		return 0;
 	}
-		
-		
-
-//	public ArrayList<Atraccion> getAtracciones() {
-//		return atracciones;
-//	}
-//
-//	public int getCupoDisponible() {
-//		int cupoDisponible = 0;
-//		for (Atraccion a : atracciones) {
-//			cupoDisponible = a.getCuposDisponible();
-//		}
-//		return cupoDisponible;
-//	}
-//
-//	public int compareTo(Oferta otraOferta) {
-//		return 0;
-//	}
+	
+	public int getCupoDisponible() {
+		int cupoDisponible = 0;
+		for (String a : atracciones) {
+			for(Oferta b : Archivo.ofertas)
+				if(a.equals(b.nombre))
+					cupoDisponible = b.getCosto();
+			}
+		return cupoDisponible;
+	}
+	
+	public int compareTo(Oferta otraOferta) {
+		return 0;
+	}
 
 
 }

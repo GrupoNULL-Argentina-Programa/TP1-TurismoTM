@@ -1,5 +1,5 @@
 package paqueteTurismoTM;
 
 public interface Comparable {
-	public int compareTo();
+	public int compareTo(Oferta otraOferta);
 }
