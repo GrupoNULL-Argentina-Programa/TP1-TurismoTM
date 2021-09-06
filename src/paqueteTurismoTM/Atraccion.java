@@ -34,9 +34,4 @@ public class Atraccion extends Oferta {
 				+ tipoAtraccion + ", cuposDisponible=" + cuposDisponible + "]";
 	}
 
-	@Override
-	public int compareTo(Oferta otraOferta) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }

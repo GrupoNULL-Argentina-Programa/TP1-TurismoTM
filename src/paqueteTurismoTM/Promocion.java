@@ -47,10 +47,6 @@ public abstract class Promocion extends Oferta {
 		return cupoDisponible;
 	}
 
-	public int compareTo(Oferta otraOferta) {
-		return 0;
-	}
-
 	public abstract int getCosto();
 
 }

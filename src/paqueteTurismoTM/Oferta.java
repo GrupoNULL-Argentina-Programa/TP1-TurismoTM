@@ -23,6 +23,18 @@ public abstract class Oferta implements Comparable {
 	protected abstract int getCosto();
 
 	protected abstract double getTiempo();
-	
-	public abstract int compareTo(Oferta otraOferta);
+
+	public int compareTo(Oferta otraOferta) {
+		if (this.getCosto() > otraOferta.getCosto()) {
+			return 1;
+		} else if (this.getCosto() < otraOferta.getCosto()) {
+			return -1;
+		} else if (this.getTiempo() > otraOferta.getTiempo()) {
+			return 1;
+		} else if (this.getTiempo() < otraOferta.getCosto()) {
+			return -1;
+		} else {
+			return 0;
+		}
+	}
 }

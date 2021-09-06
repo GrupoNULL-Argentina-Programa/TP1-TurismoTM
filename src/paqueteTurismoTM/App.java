@@ -30,7 +30,14 @@ public class App {
 			System.out.println(promocion);
 		}
 
-		System.out.println("\n El booleando retornado es: " + clientes.get(0).responderPregunta());
+		// Ordena el array ofertas de mayor a menor y luego lo muestra.
+		//
+		Archivo.OrdenarOfertas();
+		System.out.println("\n\n");
+		for (Oferta a : Archivo.ofertas) {
+			System.out.println(a);
+		}
+		//
 
 	}
 }
