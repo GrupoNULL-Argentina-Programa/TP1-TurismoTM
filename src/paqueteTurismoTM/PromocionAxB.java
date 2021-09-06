@@ -52,8 +52,8 @@ public class PromocionAxB extends Promocion {
 	@Override
 	public String toString() {
 		return "" + this.nombre + " contiene las siguientese atracciones " + "[" + tipoAtraccion + "]:" + "\n\t"
-				+ this.mostrarAtraccionesPagas() + "\n\tSu precio totol es de " + this.getCosto() + " monedas de oro."
-				+ "\n\t Además son gratis las atracciones:\n\t" + atracciones + "\n\tTiempo Total es de "
+				+ this.mostrarAtraccionesPagas() + "\n\tSu precio total es de " + this.getCosto() + " monedas de oro."
+				+ "\n\t Además son gratis las atracciones:\n\t" + this.atraccionesGratis + "\n\tTiempo Total es de "
 				+ this.getTiempo() + "hs.";
 	}
 }
