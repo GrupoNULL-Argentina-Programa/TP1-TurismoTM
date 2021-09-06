@@ -13,7 +13,7 @@ public class PromocionPorcentual extends Promocion {
 		this.descuento = descuento;
 	}
 
-
+	@Override
 	public int getCosto() {
 		for (String a : atracciones) {
 			for (Oferta b : Archivo.ofertas) {

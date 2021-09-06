@@ -121,6 +121,7 @@ public class LectorDeFicheros {
 		for (int i = 0; i < arrayDePromAbs.size(); i++) {
 			ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDePromAbs.get(i).split(";")));
 			System.out.println(campos);
+			@SuppressWarnings("unused")
 			ArrayList<String> arrayDeAtracciones;
 			promociones.add(new PromocionAbsoluta(campos.get(0), TipoAtraccion.valueOf(campos.get(1)),
 					Integer.parseInt(campos.get(2)),

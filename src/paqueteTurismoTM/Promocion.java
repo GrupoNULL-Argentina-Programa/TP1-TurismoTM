@@ -2,14 +2,14 @@ package paqueteTurismoTM;
 
 import java.util.ArrayList;
 
-public abstract class Promocion extends Oferta{
+public abstract class Promocion extends Oferta {
 	public ArrayList<String> atracciones;
 	protected int costo;
 	protected double tiempoTotal;
 	protected int cupoDisponible;
-  
+
 	public Promocion(String nombre, TipoAtraccion tipoAtraccion, ArrayList<String> atracciones) {
-		super (nombre, tipoAtraccion);
+		super(nombre, tipoAtraccion);
 		this.atracciones = new ArrayList<String>(atracciones);
 	}
 
@@ -28,32 +28,29 @@ public abstract class Promocion extends Oferta{
 		}
 		return tiempoTotal;
 	}
-	
+
 	public void venderCupo() {
 		for (String a : atracciones) {
-			for(Oferta b : Archivo.ofertas)
-				if(a.equals(b.nombre))
+			for (Oferta b : Archivo.ofertas)
+				if (a.equals(b.nombre))
 					b.venderCupo();
-			}
+		}
 	}
-	
-	public int getCosto() {
-		return 0;
-	}
-	
+
 	public int getCupoDisponible() {
 		int cupoDisponible = 0;
 		for (String a : atracciones) {
-			for(Oferta b : Archivo.ofertas)
-				if(a.equals(b.nombre))
+			for (Oferta b : Archivo.ofertas)
+				if (a.equals(b.nombre))
 					cupoDisponible = b.getCosto();
-			}
+		}
 		return cupoDisponible;
 	}
-	
+
 	public int compareTo(Oferta otraOferta) {
 		return 0;
 	}
 
+	public abstract int getCosto();
 
 }

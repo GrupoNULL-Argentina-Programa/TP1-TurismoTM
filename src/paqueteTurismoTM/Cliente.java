@@ -9,7 +9,7 @@ public class Cliente {
 	protected TipoAtraccion preferencia;
 	protected int presupuesto;
 	protected double tiempo;
-	private Itinerario itinerario;
+	protected Itinerario itinerario;
 
 	public Cliente(String nombre, TipoAtraccion preferencia, int presupuesto, double tiempo) {
 		super();
@@ -17,6 +17,7 @@ public class Cliente {
 		this.preferencia = preferencia;
 		this.presupuesto = presupuesto;
 		this.tiempo = tiempo;
+		itinerario = new Itinerario();
 	}
 
 	public void comprarOferta(Oferta unaOferta) {
