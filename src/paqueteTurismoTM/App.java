@@ -1,17 +1,13 @@
 package paqueteTurismoTM;
 
 import java.io.IOException;
-import java.util.*;
 
 public class App {
 
-	public static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-	public static ArrayList<Oferta> ofertas = new ArrayList<Oferta>();
-
 	public static void main(String[] args) throws IOException {
 		LectorDeFicheros lector = new LectorDeFicheros();
-		clientes = lector.cargarClientes();
-		for (Cliente cliente : clientes) {
+		Archivo.clientes = lector.cargarClientes();
+		for (Cliente cliente : Archivo.clientes) {
 			System.out.println(cliente);
 		}
 
@@ -38,6 +34,5 @@ public class App {
 			System.out.println(a);
 		}
 		//
-
 	}
 }

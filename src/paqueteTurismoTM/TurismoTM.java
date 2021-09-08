@@ -6,7 +6,7 @@ public class TurismoTM {
 
 	public static void sugerenciaCliente() throws IOException {
 
-		for (Cliente unCliente : App.clientes) {
+		for (Cliente unCliente : Archivo.clientes) {
 			boolean nuevoCliente = true;
 			boolean seguirOfreciendo = true;
 			Oferta unaOferta;
@@ -24,6 +24,7 @@ public class TurismoTM {
 							seguirOfreciendo = unCliente.responderPregunta();
 							nuevoCliente = false;
 						} else {
+							unCliente.agregarAItinerarioOR(unaOferta);
 							mensajeQuieresVerOtraOferta();
 							seguirOfreciendo = unCliente.responderPregunta();
 						}

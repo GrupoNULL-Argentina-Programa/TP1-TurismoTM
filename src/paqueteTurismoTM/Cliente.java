@@ -21,17 +21,21 @@ public class Cliente {
 	}
 
 	public void comprarOferta(Oferta unaOferta) {
+		
 		descontarOroYTiempo(unaOferta);
-		agregarAItinerario(unaOferta);
+		agregarAItinerarioOA(unaOferta);
+		
 	}
 
-	private void agregarAItinerario(Oferta unaOferta) {
-		// TODO Auto-generated method stub
-
+	public void agregarAItinerarioOA(Oferta unaOferta) {
+		
+	}
+	
+	public void agregarAItinerarioOR(Oferta unaOferta) {
+		
 	}
 
-	private void descontarOroYTiempo(Oferta unaOferta) {
-		// TODO Auto-generated method stub
+	public void descontarOroYTiempo(Oferta unaOferta) {
 
 	}
 
