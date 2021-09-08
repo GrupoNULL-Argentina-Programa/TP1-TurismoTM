@@ -26,12 +26,13 @@ public class Cliente {
 	}
 
 	private void agregarAItinerario(Oferta unaOferta) {
-		// TODO Auto-generated method stub
+		this.itinerario.ofertasCompradas.add(unaOferta);
 
 	}
 
 	private void descontarOroYTiempo(Oferta unaOferta) {
-		// TODO Auto-generated method stub
+		this.presupuesto -= unaOferta.getCosto();
+		this.tiempo -= unaOferta.getTiempo();
 
 	}
 

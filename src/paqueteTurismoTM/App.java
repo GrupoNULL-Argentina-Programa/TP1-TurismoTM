@@ -12,32 +12,33 @@ public class App {
 		LectorDeFicheros lector = new LectorDeFicheros();
 		clientes = lector.cargarClientes();
 		for (Cliente cliente : clientes) {
-			System.out.println(cliente);
+		//	System.out.println(cliente);
 		}
 
-		System.out.println();
+		//System.out.println();
 
-		LectorDeFicheros lector1 = new LectorDeFicheros();
-		Archivo.ofertas = lector1.cargarAtraccion();
+		//LectorDeFicheros lector1 = new LectorDeFicheros();
+		Archivo.ofertas = lector.cargarAtraccion();
 		for (Oferta atraccion : Archivo.ofertas) {
-			System.out.println(atraccion);
+		//	System.out.println(atraccion);
 		}
-		System.out.println();
+		//System.out.println();
 
-		LectorDeFicheros lector2 = new LectorDeFicheros();
-		Archivo.ofertas.addAll(lector2.cargarPromocionAbsoluta());
+		//LectorDeFicheros lector2 = new LectorDeFicheros();
+		Archivo.ofertas.addAll(lector.cargarPromocionAbsoluta());
 		for (Oferta promocion : Archivo.ofertas) {
-			System.out.println(promocion);
+		//	System.out.println(promocion);
 		}
 
 		// Ordena el array ofertas de mayor a menor y luego lo muestra.
 		//
 		Archivo.OrdenarOfertas();
-		System.out.println("\n\n");
+		//System.out.println("\n\n");
 		for (Oferta a : Archivo.ofertas) {
 			System.out.println(a);
 		}
-		//
+		
+		lector.generarTicket(Archivo.ofertas);
 
 	}
 }
