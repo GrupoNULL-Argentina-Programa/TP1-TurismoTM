@@ -18,6 +18,8 @@ public abstract class Oferta implements Comparable {
 		return tipoAtraccion;
 	}
 
+	protected abstract int getCuposDisponible();
+	
 	public abstract void venderCupo();
 
 	protected abstract int getCosto();

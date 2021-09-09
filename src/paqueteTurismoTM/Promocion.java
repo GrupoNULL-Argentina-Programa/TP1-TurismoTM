@@ -37,12 +37,16 @@ public abstract class Promocion extends Oferta {
 		}
 	}
 
-	public int getCupoDisponible() {
-		int cupoDisponible = 0;
+	public int getCuposDisponible() {
+		int cupoDisponible = 9999;
 		for (String a : atracciones) {
-			for (Oferta b : Archivo.ofertas)
-				if (a.equals(b.nombre))
-					cupoDisponible = b.getCosto();
+			for (Oferta b : Archivo.ofertas) {
+				if (a.equals(b.nombre)) {
+					if (b.getCuposDisponible() < cupoDisponible) {
+						cupoDisponible = b.getCosto();
+					}
+				}
+			}
 		}
 		return cupoDisponible;
 	}
