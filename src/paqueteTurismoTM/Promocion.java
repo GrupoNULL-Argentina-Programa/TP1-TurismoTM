@@ -20,7 +20,7 @@ public abstract class Promocion extends Oferta {
 	public double getTiempo() {
 		double tiempoTotal = 0;
 		for (String a : atracciones) {
-			for (Oferta b : Archivo.ofertas) {
+			for (Oferta b : App.ofertas) {
 				if (a.equals(b.nombre)) {
 					tiempoTotal += b.tiempo;
 				}
@@ -31,7 +31,7 @@ public abstract class Promocion extends Oferta {
 
 	public void venderCupo() {
 		for (String a : atracciones) {
-			for (Oferta b : Archivo.ofertas)
+			for (Oferta b : App.ofertas)
 				if (a.equals(b.nombre))
 					b.venderCupo();
 		}
@@ -40,7 +40,7 @@ public abstract class Promocion extends Oferta {
 	public int getCuposDisponible() {
 		int cupoDisponible = 9999;
 		for (String a : atracciones) {
-			for (Oferta b : Archivo.ofertas) {
+			for (Oferta b : App.ofertas) {
 				if (a.equals(b.nombre)) {
 					if (b.getCuposDisponible() < cupoDisponible) {
 						cupoDisponible = b.getCosto();

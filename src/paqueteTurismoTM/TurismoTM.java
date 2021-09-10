@@ -6,12 +6,13 @@ public class TurismoTM {
 
 	public static void sugerenciaCliente() throws IOException {
 
-		for (Cliente unCliente : Archivo.clientes) {
+		for (Cliente unCliente : App.clientes) {
 			boolean nuevoCliente = true;
 			boolean seguirOfreciendo = true;
 			Oferta unaOferta;
 			mensajeBienvenida();
-
+			// Ordena el array ofertas disponibles, según preferencias, costo y tiempo.
+			Ofertable.ordenarOfertas(unCliente.preferencia);
 			if (Ofertable.comprobarCuposTotales()) {
 				while (seguirOfreciendo) {
 					if (Ofertable.hayOfertaDisponible(unCliente, nuevoCliente)) {
