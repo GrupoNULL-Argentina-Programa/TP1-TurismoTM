@@ -16,7 +16,7 @@ public class PromocionPorcentual extends Promocion {
 	@Override
 	public int getCosto() {
 		for (String a : atracciones) {
-			for (Oferta b : Archivo.ofertas) {
+			for (Oferta b : App.ofertas) {
 				if (a == b.getNombre()) {
 					costo += b.getCosto();
 				}

@@ -37,6 +37,14 @@ public class PromocionAxB extends Promocion {
 				}
 			}
 		}
+
+		for (String a : atraccionesPagas) {
+			for (Oferta b : App.ofertas)
+				if (a.equals(b.nombre))
+					costoTotal = b.getCosto();
+		}
+		return costoTotal;
+
 		return (int) costo;
 	}
 	
