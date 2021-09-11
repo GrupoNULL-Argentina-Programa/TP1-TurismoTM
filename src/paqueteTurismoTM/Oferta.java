@@ -1,6 +1,6 @@
 package paqueteTurismoTM;
 
-public abstract class Oferta implements Comparable {
+public abstract class Oferta{
 	protected String nombre = "";
 	protected double tiempo;
 	protected TipoAtraccion tipoAtraccion;
@@ -20,23 +20,12 @@ public abstract class Oferta implements Comparable {
 		
 	
 
+	protected abstract int getCuposDisponible();
+	
 	public abstract void venderCupo();
 
 	protected abstract int getCosto();
 
 	protected abstract double getTiempo();
 
-	public int compareTo(Oferta otraOferta) {
-		if (this.getCosto() > otraOferta.getCosto()) {
-			return 1;
-		} else if (this.getCosto() < otraOferta.getCosto()) {
-			return -1;
-		} else if (this.getTiempo() > otraOferta.getTiempo()) {
-			return 1;
-		} else if (this.getTiempo() < otraOferta.getCosto()) {
-			return -1;
-		} else {
-			return 0;
-		}
-	}
 }

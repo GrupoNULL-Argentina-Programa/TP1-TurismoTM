@@ -21,9 +21,12 @@ public class Cliente {
 	}
 
 	public void comprarOferta(Oferta unaOferta) {
+		
 		descontarOroYTiempo(unaOferta);
-		agregarAItinerario(unaOferta);
+		agregarAItinerarioOA(unaOferta);
+		
 	}
+
 
 	private void agregarAItinerario(Oferta unaOferta) {
 		this.itinerario.ofertasCompradas.add(unaOferta);
@@ -34,7 +37,6 @@ public class Cliente {
 		this.presupuesto -= unaOferta.getCosto();
 		this.tiempo -= unaOferta.getTiempo();
 
-	}
 
 	@Override
 	public String toString() {

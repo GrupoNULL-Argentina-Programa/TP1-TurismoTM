@@ -11,7 +11,8 @@ public class TurismoTM {
 			boolean seguirOfreciendo = true;
 			Oferta unaOferta;
 			mensajeBienvenida();
-
+			// Ordena el array ofertas disponibles, según preferencias, costo y tiempo.
+			Ofertable.ordenarOfertas(unCliente.preferencia);
 			if (Ofertable.comprobarCuposTotales()) {
 				while (seguirOfreciendo) {
 					if (Ofertable.hayOfertaDisponible(unCliente, nuevoCliente)) {
@@ -24,6 +25,7 @@ public class TurismoTM {
 							seguirOfreciendo = unCliente.responderPregunta();
 							nuevoCliente = false;
 						} else {
+							unCliente.agregarAItinerarioOR(unaOferta);
 							mensajeQuieresVerOtraOferta();
 							seguirOfreciendo = unCliente.responderPregunta();
 						}
