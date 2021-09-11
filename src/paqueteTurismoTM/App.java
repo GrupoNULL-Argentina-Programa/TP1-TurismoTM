@@ -7,6 +7,7 @@ public class App {
 	
 	public static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 	public static ArrayList<Oferta> ofertas = new ArrayList<Oferta>();
+//	public static ArrayList<Oferta> atracciones = new ArrayList<Atraccion>();
 
 	public static void main(String[] args) throws IOException {
     
@@ -24,6 +25,8 @@ public class App {
 			System.out.println(atraccion);
 		}
 		System.out.println();
+		
+		
 
 		LectorDeFicheros lector2 = new LectorDeFicheros();
 		ofertas.addAll(lector2.cargarPromocionAbsoluta());
@@ -33,8 +36,14 @@ public class App {
 
 		
 		LectorDeFicheros lector3 = new LectorDeFicheros();
-		Archivo.ofertas.addAll(lector3.cargarPromocionAxB());
-		for (Oferta promocion : Archivo.ofertas) {
+		ofertas.addAll(lector3.cargarPromocionAxB());
+		for (Oferta promocion : ofertas) {
+			System.out.println(promocion);
+		}
+		
+		LectorDeFicheros lector4 = new LectorDeFicheros();
+		ofertas.addAll(lector4.cargarPromocionPorcentual());
+		for (Oferta promocion : ofertas) {
 			System.out.println(promocion);
 		}
 	}

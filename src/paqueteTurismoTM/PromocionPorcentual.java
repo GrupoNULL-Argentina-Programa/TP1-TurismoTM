@@ -7,8 +7,8 @@ public class PromocionPorcentual extends Promocion {
 	private double descuento;// decimal
 
 
-	public PromocionPorcentual(String nombre, TipoAtraccion tipoAtraccion, 
-			ArrayList<String> atracciones,double descuento) {
+	public PromocionPorcentual(String nombre, TipoAtraccion tipoAtraccion, double descuento,
+			ArrayList<String> atracciones) {
 		super(nombre, tipoAtraccion, atracciones);
 		this.descuento = descuento;
 	}
@@ -17,7 +17,7 @@ public class PromocionPorcentual extends Promocion {
 	public int getCosto() {
 		for (String a : atracciones) {
 			for (Oferta b : App.ofertas) {
-				if (a == b.getNombre()) {
+				if (a.equals(b.nombre)) {
 					costo += b.getCosto();
 				}
 			}
@@ -27,8 +27,10 @@ public class PromocionPorcentual extends Promocion {
 
 	@Override
 	public String toString() {
-		return "Promocion [nombre=" + this.nombre + ", costo=" + this.getCosto() + ", tiempo=" + this.getTiempo()
-				+ ", tipoDeAtraccipon=" + tipoAtraccion + ", cupoDisponible=" + "]";
+		return "" + nombre + " contiene las siguientes atracciones " + "[" + tipoAtraccion + "]:" + "\n\t" + atracciones
+				+ "\n\tSu costo total es de " + this.getCosto() + " monedas de oro"
+				+ "\n\tEl tiempo total necesario es de " + this.getTiempo() + " Hs.";
 	}
+
 
 }

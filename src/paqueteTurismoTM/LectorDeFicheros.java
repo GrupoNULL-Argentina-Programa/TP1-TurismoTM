@@ -100,5 +100,21 @@ public class LectorDeFicheros {
 		}
 		return promociones;
 	}
+	
+	public ArrayList<Oferta> cargarPromocionPorcentual() {
+		ArrayList<String> arrayDePromPorc = leerFichero("res/entrada/promocionPorcentual.txt");
+		ArrayList<Oferta> promociones = new ArrayList<Oferta>();
+		for (int i = 0; i < arrayDePromPorc.size(); i++) {
+			ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDePromPorc.get(i).split(";")));
+			System.out.println(campos);
+			@SuppressWarnings("unused")
+			ArrayList<String> arrayDeAtracciones;
+			promociones.add(new PromocionPorcentual(campos.get(0), TipoAtraccion.valueOf(campos.get(1)),
+					Double.parseDouble(campos.get(2)),
+					arrayDeAtracciones = new ArrayList<>(Arrays.asList(campos.get(3).split(",")))));
+
+		}
+		return promociones;
+	}
 
 }
