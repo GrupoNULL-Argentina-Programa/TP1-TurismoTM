@@ -20,7 +20,7 @@ public abstract class Oferta{
 		
 	
 
-	protected abstract int getCuposDisponible();
+	protected abstract int getCuposDisponibles();
 	
 	public abstract void venderCupo();
 

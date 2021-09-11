@@ -23,19 +23,14 @@ public class Cliente {
 	public void comprarOferta(Oferta unaOferta) {
 		
 		descontarOroYTiempo(unaOferta);
-		agregarAItinerarioOA(unaOferta);
+		Itinerario.agregarAlItinerario(unaOferta);
 		
-	}
-
-
-	private void agregarAItinerario(Oferta unaOferta) {
-		this.itinerario.ofertasCompradas.add(unaOferta);
-
-	}
+	}	
 
 	private void descontarOroYTiempo(Oferta unaOferta) {
 		this.presupuesto -= unaOferta.getCosto();
 		this.tiempo -= unaOferta.getTiempo();
+		}
 
 
 	@Override

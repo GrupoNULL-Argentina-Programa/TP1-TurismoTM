@@ -30,7 +30,7 @@ public class PromocionAxB extends Promocion {
 	@Override
 	public int getCosto() {
 		for (String a : atracciones) {
-			for (Oferta b : App.ofertas) {
+			for (Oferta b : TurismoTM.ofertas) {
 				if (a.equals(b.nombre)) {
 					costo += b.getCosto();
 				}
@@ -43,14 +43,14 @@ public class PromocionAxB extends Promocion {
 	public double getTiempo() {
 		double tiempoTotal = 0;
 		for (String a : atracciones) {
-			for (Oferta b : App.ofertas) {
+			for (Oferta b : TurismoTM.ofertas) {
 				if (a.equals(b.nombre)) {
 					tiempoTotal += b.tiempo;
 				}
 			}
 		}
 		for (String a : atraccionesGratis) {
-			for (Oferta b : App.ofertas) {
+			for (Oferta b : TurismoTM.ofertas) {
 				if (a.equals(b.nombre)) {
 					tiempoTotal += b.tiempo;
 				}

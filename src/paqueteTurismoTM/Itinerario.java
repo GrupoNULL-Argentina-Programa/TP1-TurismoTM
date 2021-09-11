@@ -3,7 +3,7 @@ package paqueteTurismoTM;
 import java.util.ArrayList;
 
 public class Itinerario {
-	public ArrayList<Oferta> ofertasCompradas;
+	public static ArrayList<Oferta> ofertasCompradas;
 	public ArrayList<Oferta> ofertasRechazadas;
 	protected int montoTotal;
 	protected double horasTotales;
@@ -25,6 +25,11 @@ public class Itinerario {
 			horasTotales += oferta.getTiempo();
 		}
 		return horasTotales;
+	}
+	
+	public static void agregarAlItinerario(Oferta unaOferta) {
+		ofertasCompradas.add(unaOferta);
+
 	}
 
 	@Override

@@ -3,13 +3,13 @@ package paqueteTurismoTM;
 public class Atraccion extends Oferta {
 
 	private int costo;
-	private int cuposDisponible;
+	private int cuposDisponibles;
 
-	public Atraccion(String nombre, int costo, double tiempo, int cuposDisponible, TipoAtraccion tipoAtraccion) {
+	public Atraccion(String nombre, int costo, double tiempo, int cuposDisponibles, TipoAtraccion tipoAtraccion) {
 		super(nombre, tipoAtraccion);
 		this.costo = costo;
 		this.tiempo = tiempo;
-		this.cuposDisponible = cuposDisponible;
+		this.cuposDisponibles = cuposDisponibles;
 	}
 
 	public int getCosto() {
@@ -21,17 +21,17 @@ public class Atraccion extends Oferta {
 	}
 
 	public void venderCupo() {
-		this.cuposDisponible--;
+		this.cuposDisponibles--;
 	}
 
-	public int getCuposDisponible() {
-		return cuposDisponible;
+	public int getCuposDisponibles() {
+		return cuposDisponibles;
 	}
 
 	@Override
 	public String toString() {
 		return "Atraccion [nombre=" + nombre + ", costo=" + costo + ", tiempo=" + tiempo + ", tipoAtraccion="
-				+ tipoAtraccion + ", cuposDisponible=" + cuposDisponible + "]";
+				+ tipoAtraccion + ", cuposDisponible=" + cuposDisponibles + "]";
 	}
 
 }

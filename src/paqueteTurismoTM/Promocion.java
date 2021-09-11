@@ -6,7 +6,7 @@ public abstract class Promocion extends Oferta {
 	public ArrayList<String> atracciones;
 	protected int costo;
 	protected double tiempoTotal;
-	protected int cupoDisponible;
+	protected int cuposDisponibles;
 
 	public Promocion(String nombre, TipoAtraccion tipoAtraccion, ArrayList<String> atracciones) {
 		super(nombre, tipoAtraccion);
@@ -20,7 +20,7 @@ public abstract class Promocion extends Oferta {
 	public double getTiempo() {
 		double tiempoTotal = 0;
 		for (String a : atracciones) {
-			for (Oferta b : App.ofertas) {
+			for (Oferta b : TurismoTM.ofertas) {
 				if (a.equals(b.nombre)) {
 					tiempoTotal += b.tiempo;
 				}
@@ -28,21 +28,26 @@ public abstract class Promocion extends Oferta {
 		}
 		return tiempoTotal;
 	}
+	
+	public ArrayList<String> getAtracciones() {
+		return this.atracciones;
+	}
+
 
 	public void venderCupo() {
 		for (String a : atracciones) {
-			for (Oferta b : App.ofertas)
+			for (Oferta b : TurismoTM.ofertas)
 				if (a.equals(b.nombre))
 					b.venderCupo();
 		}
 	}
 
-	public int getCuposDisponible() {
+	public int getCuposDisponibles() {
 		int cupoDisponible = 9999;
 		for (String a : atracciones) {
-			for (Oferta b : App.ofertas) {
+			for (Oferta b : TurismoTM.ofertas) {
 				if (a.equals(b.nombre)) {
-					if (b.getCuposDisponible() < cupoDisponible) {
+					if (b.getCuposDisponibles() < cupoDisponible) {
 						cupoDisponible = b.getCosto();
 					}
 				}

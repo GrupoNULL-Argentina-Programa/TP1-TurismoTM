@@ -1,31 +1,76 @@
 package paqueteTurismoTM;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class TurismoTM {
+	
+	public static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+	public static ArrayList<Oferta> ofertas = new ArrayList<Oferta>();
+	
+	public static void main(String[] args) throws IOException {
+
+		LectorDeFicheros lector = new LectorDeFicheros();
+		clientes = lector.cargarClientes();
+		for (Cliente cliente : clientes) {
+			System.out.println(cliente);
+		}
+
+		System.out.println();
+
+		LectorDeFicheros lector1 = new LectorDeFicheros();
+		ofertas = lector1.cargarAtraccion();
+		for (Oferta atraccion : ofertas) {
+			System.out.println(atraccion);
+		}
+		System.out.println();
+
+		LectorDeFicheros lector2 = new LectorDeFicheros();
+		ofertas.addAll(lector2.cargarPromocionAbsoluta());
+		for (Oferta promocion : ofertas) {
+			System.out.println(promocion);
+		}
+
+		LectorDeFicheros lector3 = new LectorDeFicheros();
+		ofertas.addAll(lector3.cargarPromocionAxB());
+		for (Oferta promocion : ofertas) {
+			System.out.println(promocion);
+		}
+
+		LectorDeFicheros lector4 = new LectorDeFicheros();
+		ofertas.addAll(lector4.cargarPromocionPorcentual());
+		for (Oferta promocion : ofertas) {
+			System.out.println(promocion);
+		}
+		
+		
+		
+
+	}
 
 	public static void sugerenciaCliente() throws IOException {
 
-		for (Cliente unCliente : App.clientes) {
-			boolean nuevoCliente = true;
+		for (Cliente unCliente : clientes) {			
 			boolean seguirOfreciendo = true;
 			Oferta unaOferta;
+
 			mensajeBienvenida();
-			// Ordena el array ofertas disponibles, según preferencias, costo y tiempo.
-			Ofertable.ordenarOfertas(unCliente.preferencia);
-			if (Ofertable.comprobarCuposTotales()) {
+			if (Ofertable.comprobarSiHayOferta()) {				
+			Ofertable.ordenarOfertas(unCliente.preferencia);			
 				while (seguirOfreciendo) {
-					if (Ofertable.hayOfertaDisponible(unCliente, nuevoCliente)) {
-						unaOferta = Ofertable.getOferta(unCliente, nuevoCliente);
+					if (Ofertable.hayOfertaDisponible(unCliente)) {
+						unaOferta = Ofertable.getOferta(unCliente);
 						mensajeQuieresComprarEsto(unaOferta);
 						if (unCliente.responderPregunta()) {
 							unCliente.comprarOferta(unaOferta);
 							unaOferta.venderCupo();
+							Itinerario.agregarAlItinerario(unaOferta);
+							Ofertable.quitarOfertasCompradas();
+							Ofertable.quitarOfertasSinCupo();
 							mensajeQuieresVerOtraOferta();
-							seguirOfreciendo = unCliente.responderPregunta();
-							nuevoCliente = false;
+							seguirOfreciendo = unCliente.responderPregunta();							
 						} else {
-							unCliente.agregarAItinerarioOR(unaOferta);
+							Ofertable.quitarOfertasRechazadas();
 							mensajeQuieresVerOtraOferta();
 							seguirOfreciendo = unCliente.responderPregunta();
 						}
@@ -33,6 +78,7 @@ public class TurismoTM {
 						mensajeNoPuedeComprarMas();
 					}
 				}
+				Ofertable.resetearArrayCopia();
 			} else {
 				mensajeNoHayMasCupos();
 			}
@@ -40,6 +86,7 @@ public class TurismoTM {
 
 	}
 
+	//Faltan todos los mensajes
 	private static void mensajeNoPuedeComprarMas() {
 
 	}
@@ -59,5 +106,7 @@ public class TurismoTM {
 	private static void mensajeBienvenida() {
 
 	}
+	
+	
 
 }
