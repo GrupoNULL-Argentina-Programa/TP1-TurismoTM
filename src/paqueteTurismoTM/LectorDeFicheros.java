@@ -116,5 +116,7 @@ public class LectorDeFicheros {
 		}
 		return promociones;
 	}
+	
+
 
 }

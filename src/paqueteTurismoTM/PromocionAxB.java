@@ -61,7 +61,7 @@ public class PromocionAxB extends Promocion {
 
 	@Override
 	public String toString() {
-		return "" + this.nombre + " contiene las siguientes atracciones " + "[" + tipoAtraccion + "]:" + "\n\t"
+		return "" + this.nombre + " contiene las siguientes atracciones de tipo" + "[" + tipoAtraccion + "]:" + "\n\t"
 				+ this.atracciones + "\n\tSu precio total es de " + this.getCosto() + " monedas de oro."
 				+ "\n\t Ademas son gratis las atracciones:\n\t" + this.atraccionesGratis + "\n\tTiempo Total es de "
 				+ this.getTiempo() + "hs.";
