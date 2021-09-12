@@ -3,14 +3,12 @@ package paqueteTurismoTM;
 import java.util.ArrayList;
 
 public class Itinerario {
-	public static ArrayList<Oferta> ofertasCompradas;
-	public ArrayList<Oferta> ofertasRechazadas;
+	public ArrayList<Oferta> ofertasCompradas;
 	protected int montoTotal;
 	protected double horasTotales;
 	
 	public Itinerario() {
 		ofertasCompradas = new ArrayList<Oferta>();
-		ofertasRechazadas = new ArrayList<Oferta>();
 	}
 	
 	public int getMontoTotal() {
@@ -27,14 +25,14 @@ public class Itinerario {
 		return horasTotales;
 	}
 	
-	public static void agregarAlItinerario(Oferta unaOferta) {
-		ofertasCompradas.add(unaOferta);
+	public void agregarAlItinerario(Oferta unaOferta) {
+		this.ofertasCompradas.add(unaOferta);
 
 	}
 
 	@Override
 	public String toString() {
-		return "Itinerario [ofertasCompradas=" + ofertasCompradas + ", ofertasRechazadas=" + ofertasRechazadas
+		return "Itinerario [ofertasCompradas=" + ofertasCompradas + ", ofertasRechazadas="
 				+ ", montoTotal=" + montoTotal + ", horasTotales=" + horasTotales + "]";
 	}
 	

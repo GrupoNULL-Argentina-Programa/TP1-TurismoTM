@@ -23,7 +23,7 @@ public class Cliente {
 	public void comprarOferta(Oferta unaOferta) {
 		
 		descontarOroYTiempo(unaOferta);
-		Itinerario.agregarAlItinerario(unaOferta);
+		this.itinerario.agregarAlItinerario(unaOferta);
 		
 	}	
 

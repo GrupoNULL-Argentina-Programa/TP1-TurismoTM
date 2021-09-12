@@ -42,10 +42,6 @@ public class TurismoTM {
 		for (Oferta promocion : ofertas) {
 			System.out.println(promocion);
 		}
-		
-		
-		
-
 	}
 
 	public static void sugerenciaCliente() throws IOException {
@@ -55,7 +51,7 @@ public class TurismoTM {
 			Oferta unaOferta;
 
 			mensajeBienvenida();
-			if (Ofertable.comprobarSiHayOferta()) {				
+			if (Ofertable.comprobarSiHayOferta()) {
 			Ofertable.ordenarOfertas(unCliente.preferencia);			
 				while (seguirOfreciendo) {
 					if (Ofertable.hayOfertaDisponible(unCliente)) {
@@ -64,9 +60,6 @@ public class TurismoTM {
 						if (unCliente.responderPregunta()) {
 							unCliente.comprarOferta(unaOferta);
 							unaOferta.venderCupo();
-							Itinerario.agregarAlItinerario(unaOferta);
-							Ofertable.quitarOfertasCompradas();
-							Ofertable.quitarOfertasSinCupo();
 							mensajeQuieresVerOtraOferta();
 							seguirOfreciendo = unCliente.responderPregunta();							
 						} else {
@@ -78,7 +71,6 @@ public class TurismoTM {
 						mensajeNoPuedeComprarMas();
 					}
 				}
-				Ofertable.resetearArrayCopia();
 			} else {
 				mensajeNoHayMasCupos();
 			}
@@ -88,7 +80,7 @@ public class TurismoTM {
 
 	//Faltan todos los mensajes
 	private static void mensajeNoPuedeComprarMas() {
-
+		
 	}
 
 	private static void mensajeNoHayMasCupos() {

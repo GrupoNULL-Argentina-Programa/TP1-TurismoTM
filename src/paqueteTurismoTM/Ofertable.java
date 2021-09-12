@@ -5,18 +5,32 @@ import java.util.Collections;
 
 public class Ofertable {
 
-	static ArrayList<Oferta> ofertasCopia = TurismoTM.ofertas;
+	static ArrayList<Oferta> ofertasCopia = new ArrayList<Oferta>();
 
 	public static void ordenarOfertas(TipoAtraccion preferencia) {
 		Collections.sort(ofertasCopia, new ComparadorDeOfertas(preferencia));
 	}
 
-	// Y ademas todo lo que haga falta voy a estar rellenando con booleans
 	public static boolean comprobarSiHayOferta() {
+		// Reiniciar la copia por cada nuevo cliente
+		ofertasCopia.removeAll(ofertasCopia);
+		// Hacer la copia como corresponde
+		for(Oferta unaOferta : TurismoTM.ofertas) {
+			ofertasCopia.add(unaOferta);
+		}
+		// quitar todas las ofertas sin cupo de la copia
+		quitarOfertasSinCupo();
 		return (TurismoTM.ofertas != null);
 	}
 
 	public static boolean hayOfertaDisponible(Cliente unCliente) {
+		
+		// ciclo que se repite cada vez que el cliente quiera seguir comprando
+		
+		quitarOfertasQueNoPuedeComprar(unCliente);
+		quitarOfertasCompradas(unCliente);
+		
+		// devuelve un booleano para saber si existe oferta para el mismo cliente
 		return (ofertasCopia != null);
 	}
 
@@ -24,60 +38,29 @@ public class Ofertable {
 		return ofertasCopia.get(0);
 	}
 
-	public static void resetearArrayCopia() {
-		ofertasCopia = TurismoTM.ofertas;
-	}
-
 	public static void quitarOfertasSinCupo() {
-		if (ofertasCopia.get(0) instanceof Promocion) {
-			Promocion unaPromo = (Promocion) ofertasCopia.get(0);
-			ArrayList<String> atraccionesCompradas = unaPromo.getAtracciones();
-			for (String a : atraccionesCompradas) {
-				for (Oferta b : ofertasCopia) {
-					if (a.equals(b.nombre)) {
-						b.getCuposDisponibles();
-						if (b.getCuposDisponibles() == 0) {
-							ofertasCopia.remove(b);
-						}
-					}
-				}
+		for(Oferta unaOferta : ofertasCopia) {
+			if(unaOferta.getCuposDisponibles() <= 0) {
+				ofertasCopia.remove(unaOferta);
 			}
-
 		}
-		if (ofertasCopia.get(0).getCuposDisponibles() == 0) {
-			ofertasCopia.remove(0);
-		}
-
 	}
 
-	public static void quitarOfertasCompradas() {
-		if (ofertasCopia.get(0) instanceof Promocion) {
-			Promocion unaPromo = (Promocion) ofertasCopia.get(0);
-			ArrayList<String> atraccionesCompradas = unaPromo.getAtracciones();
-			for (String a : atraccionesCompradas) {
-				for (Oferta b : ofertasCopia) {
-					if (a.equals(b.nombre)) {
-						ofertasCopia.remove(b);
-					}
-				}
-			}
-
-		} else
-			ofertasCopia.remove(0);
-
+	public static void quitarOfertasCompradas(Cliente unCliente) {
+		for(Oferta ofertaComprada : unCliente.itinerario.ofertasCompradas) {
+			ofertasCopia.remove(ofertaComprada);
+		}
 	}
 
 	public static void quitarOfertasRechazadas() {
 		ofertasCopia.remove(0);
 	}
 
-	// Falta esto
-	public static void quitarOfertasQueNoPuedeComprar(boolean unCliente) {
-
-	}
-
-	// Falta esto
-	public static void quitarOfertasQueNoTieneTiempo(boolean unCliente) {
-
+	public static void quitarOfertasQueNoPuedeComprar(Cliente unCliente) {
+		for(Oferta ofertaImposible : ofertasCopia) {
+			if(unCliente.presupuesto < ofertaImposible.getCosto() && unCliente.tiempo < ofertaImposible.getCosto()) {
+				ofertasCopia.remove(ofertaImposible);
+			}
+		}
 	}
 }

@@ -98,6 +98,7 @@ public class LectorDeFicheros {
 			System.out.println(campos);
 			@SuppressWarnings("unused")
 			ArrayList<String> arrayDeAtraccionesPagas;
+			@SuppressWarnings("unused")
 			ArrayList<String> arrayDeAtraccionesGratis;
 			promociones.add(new PromocionAxB(campos.get(0), TipoAtraccion.valueOf(campos.get(1)),
 					arrayDeAtraccionesPagas = new ArrayList<>(Arrays.asList(campos.get(2).split(","))),
