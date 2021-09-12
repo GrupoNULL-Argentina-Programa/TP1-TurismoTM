@@ -1,0 +1,4 @@
+Itinerario [ofertasCompradas=[PromocionAbsoluta 1 contiene las siguientes atracciones de tipo [DEGUSTACION]:
+	[Lothlorien, La Comarca]
+	Su costo total es de 36 monedas de oro
+	El tiempo total necesario es de 7.5 Hs.], ofertasRechazadas=, montoTotal=0, horasTotales=0.0]

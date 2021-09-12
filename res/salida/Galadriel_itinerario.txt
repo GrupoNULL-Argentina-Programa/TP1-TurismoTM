@@ -1,0 +1,1 @@
+Itinerario [ofertasCompradas=[Atraccion [nombre=Erebor, costo=12, tiempo=3.0, tipoAtraccion=PAISAJE, cuposDisponible=30]], ofertasRechazadas=, montoTotal=0, horasTotales=0.0]
