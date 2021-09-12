@@ -16,9 +16,7 @@ public abstract class Oferta{
 
 	public TipoAtraccion getTipoAtraccion() {
 		return tipoAtraccion;
-	}
-		
-	
+	}	
 
 	protected abstract int getCuposDisponibles();
 	

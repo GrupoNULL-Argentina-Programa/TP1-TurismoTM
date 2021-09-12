@@ -1,6 +1,7 @@
 package paqueteTurismoTM;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class Ofertable {
@@ -57,8 +58,9 @@ public class Ofertable {
 	}
 
 	public static void quitarOfertasQueNoPuedeComprar(Cliente unCliente) {
-		for(Oferta ofertaImposible : ofertasCopia) {
-			if(unCliente.presupuesto < ofertaImposible.getCosto() && unCliente.tiempo < ofertaImposible.getCosto()) {
+		ArrayList<Oferta> copia = (ArrayList<Oferta>)ofertasCopia.clone();
+		for(Oferta ofertaImposible : copia) {
+			if(unCliente.presupuesto < ofertaImposible.getCosto() || unCliente.tiempo < ofertaImposible.getTiempo()) {
 				ofertasCopia.remove(ofertaImposible);
 			}
 		}

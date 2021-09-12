@@ -20,8 +20,7 @@ public class Cliente {
 		itinerario = new Itinerario();
 	}
 
-	public void comprarOferta(Oferta unaOferta) {
-		
+	public void comprarOferta(Oferta unaOferta) {		
 		descontarOroYTiempo(unaOferta);
 		this.itinerario.agregarAlItinerario(unaOferta);
 		
@@ -44,19 +43,36 @@ public class Cliente {
 		String laRespuesta = null;
 		boolean r = false;
 
-		// borrar el siguiente System.out cuando ya no se necesite
-		System.out.println("\nProbando la respuesta por consola -> Quieres comprar un producto? (S/N)");
-
 		InputStreamReader sr = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(sr);
 
 		laRespuesta = br.readLine();
 		laRespuesta = laRespuesta.toLowerCase();
 
-		for (int intentos = 3; intentos >= 1; intentos--) {
+//		for (int intentos = 3; intentos >= 1; intentos--) {
+//			if (laRespuesta.equals("si") || laRespuesta.equals("s")) {
+//				r = true;
+//			} else if (laRespuesta.equals("no") || laRespuesta.equals("n")) {
+//				r = false;
+//			} else if (intentos > 1) {
+//				System.out.println(
+//						".. la respuesta ingresada es incorrecta, debe contestar con 'Si' o 'No' (intentos restantes "
+//								+ (intentos - 1) + ")");
+//				laRespuesta = br.readLine();
+//				laRespuesta = laRespuesta.toLowerCase();
+//			} else {
+//				System.out.println(".. intentos agotados, la oferta se rechazara automaticamente .. ");
+//			}
+//		}		
+		int intentos = 3;
+		int ans = -1;
+		
+		while(intentos >= 1 && ans == -1) {
 			if (laRespuesta.equals("si") || laRespuesta.equals("s")) {
+				ans = 1;
 				r = true;
 			} else if (laRespuesta.equals("no") || laRespuesta.equals("n")) {
+				ans = 0;
 				r = false;
 			} else if (intentos > 1) {
 				System.out.println(
@@ -66,9 +82,11 @@ public class Cliente {
 				laRespuesta = laRespuesta.toLowerCase();
 			} else {
 				System.out.println(".. intentos agotados, la oferta se rechazara automaticamente .. ");
+				ans = 0;
+				r = false;
 			}
+			intentos--;
 		}
 		return r;
 	}
-
 }
