@@ -1,1 +1,1 @@
-Itinerario [ofertasCompradas=[Atraccion [nombre=Moria, costo=10, tiempo=2.0, tipoAtraccion=AVENTURA, cuposDisponible=5]], ofertasRechazadas=, montoTotal=0, horasTotales=0.0]
+Itinerario [ofertasCompradas=[], ofertasRechazadas=, montoTotal=0, horasTotales=0.0]

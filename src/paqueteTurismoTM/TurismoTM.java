@@ -59,10 +59,11 @@ public class TurismoTM {
 				Ofertable.ordenarOfertas(unCliente.preferencia);
 				while (seguirOfreciendo) {
 					if (Ofertable.hayOfertaDisponible(unCliente)) {
-						unaOferta = Ofertable.getOferta(unCliente);
+						unaOferta = Ofertable.getOferta();
 						mensajeQuieresComprarEsto(unaOferta);
 						if (unCliente.responderPregunta()) {
 							unCliente.comprarOferta(unaOferta);
+							Ofertable.quitarOfertasCompradasDos();
 							unaOferta.venderCupo();
 							mensajeQuieresVerOtraOferta();
 							seguirOfreciendo = unCliente.responderPregunta();
@@ -73,6 +74,7 @@ public class TurismoTM {
 						}
 					} else {
 						mensajeNoPuedeComprarMas();
+						seguirOfreciendo=false;
 					}
 				}
 			} else {

@@ -1,1 +1,1 @@
-Itinerario [ofertasCompradas=[Atraccion [nombre=Erebor, costo=12, tiempo=3.0, tipoAtraccion=PAISAJE, cuposDisponible=30]], ofertasRechazadas=, montoTotal=0, horasTotales=0.0]
+Itinerario [ofertasCompradas=[Atraccion [nombre=Erebor, costo=12, tiempo=3.0, tipoAtraccion=PAISAJE, cuposDisponible=29], Atraccion [nombre=Abismo de Helm, costo=5, tiempo=2.0, tipoAtraccion=PAISAJE, cuposDisponible=12]], ofertasRechazadas=, montoTotal=0, horasTotales=0.0]
