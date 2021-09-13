@@ -28,11 +28,10 @@ public abstract class Promocion extends Oferta {
 		}
 		return tiempoTotal;
 	}
-	
+
 	public ArrayList<String> getAtracciones() {
 		return this.atracciones;
 	}
-
 
 	public void venderCupo() {
 		for (String a : atracciones) {
@@ -57,5 +56,4 @@ public abstract class Promocion extends Oferta {
 	}
 
 	public abstract int getCosto();
-
 }

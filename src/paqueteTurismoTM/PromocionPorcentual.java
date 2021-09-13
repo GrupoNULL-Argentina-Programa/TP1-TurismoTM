@@ -4,8 +4,7 @@ import java.util.ArrayList;
 
 public class PromocionPorcentual extends Promocion {
 
-	private double descuento;// decimal
-
+	private double descuento; // decimal
 
 	public PromocionPorcentual(String nombre, TipoAtraccion tipoAtraccion, double descuento,
 			ArrayList<String> atracciones) {
@@ -27,10 +26,8 @@ public class PromocionPorcentual extends Promocion {
 
 	@Override
 	public String toString() {
-		return "" + nombre + " contiene las siguientes atracciones de tipo " + "[" + tipoAtraccion + "]:" + "\n\t" + atracciones
-				+ "\n\tSu costo total es de " + this.getCosto() + " monedas de oro"
+		return "" + nombre + " contiene las siguientes atracciones de tipo " + "[" + tipoAtraccion + "]:" + "\n\t"
+				+ atracciones + "\n\tSu costo total es de " + this.getCosto() + " monedas de oro"
 				+ "\n\tEl tiempo total necesario es de " + this.getTiempo() + " Hs.";
 	}
-
-
 }

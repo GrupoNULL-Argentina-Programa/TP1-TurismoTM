@@ -30,8 +30,7 @@ public class Atraccion extends Oferta {
 
 	@Override
 	public String toString() {
-		return "Atraccion [nombre=" + nombre + ", costo=" + costo + ", tiempo=" + tiempo + ", tipoAtraccion="
-				+ tipoAtraccion + ", cuposDisponible=" + cuposDisponibles + "]";
+		return "Atracción: " + nombre + ", Costo: " + costo + ", Duración: " + tiempo + ", Tipo: " + tipoAtraccion
+				+ ", Cupos Disponibles: " + cuposDisponibles;
 	}
-
 }

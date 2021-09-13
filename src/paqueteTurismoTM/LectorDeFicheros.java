@@ -58,7 +58,6 @@ public class LectorDeFicheros {
 		ArrayList<Oferta> atracciones = new ArrayList<Oferta>();
 		for (int i = 0; i < arrayDeAtracciones.size(); i++) {
 			ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDeAtracciones.get(i).split(";")));
-			// System.out.println(campos);
 			atracciones.add(
 					new Atraccion(campos.get(0), Integer.parseInt(campos.get(1)), Double.parseDouble(campos.get(2)),
 							Integer.parseInt(campos.get(3)), TipoAtraccion.valueOf(campos.get(4))));
@@ -71,7 +70,6 @@ public class LectorDeFicheros {
 		ArrayList<Oferta> promociones = new ArrayList<Oferta>();
 		for (int i = 0; i < arrayDePromAbs.size(); i++) {
 			ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDePromAbs.get(i).split(";")));
-			// System.out.println(campos);
 			@SuppressWarnings("unused")
 			ArrayList<String> arrayDeAtracciones;
 			promociones.add(new PromocionAbsoluta(campos.get(0), TipoAtraccion.valueOf(campos.get(1)),
@@ -86,15 +84,9 @@ public class LectorDeFicheros {
 		ArrayList<Oferta> promociones = new ArrayList<Oferta>();
 		for (int i = 0; i < arrayDePromAxB.size(); i++) {
 			ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDePromAxB.get(i).split(";")));
-			//System.out.println(campos);
-//			@SuppressWarnings("unused")
-//			ArrayList<String> arrayDeAtraccionesPagas;
-//			@SuppressWarnings("unused")
-//			ArrayList<String> arrayDeAtraccionesGratis;
 			promociones.add(new PromocionAxB(campos.get(0), TipoAtraccion.valueOf(campos.get(1)),
-					/*arrayDeAtraccionesPagas = */new ArrayList<>(Arrays.asList(campos.get(2).split(","))),
-					/*arrayDeAtraccionesGratis = */new ArrayList<>(Arrays.asList(campos.get(3).split(",")))));
-
+					new ArrayList<>(Arrays.asList(campos.get(2).split(","))),
+					new ArrayList<>(Arrays.asList(campos.get(3).split(",")))));
 		}
 		return promociones;
 	}
@@ -104,20 +96,16 @@ public class LectorDeFicheros {
 		ArrayList<Oferta> promociones = new ArrayList<Oferta>();
 		for (int i = 0; i < arrayDePromPorc.size(); i++) {
 			ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDePromPorc.get(i).split(";")));
-			//System.out.println(campos);
-//			@SuppressWarnings("unused")
-//			ArrayList<String> arrayDeAtracciones;
 			promociones.add(new PromocionPorcentual(campos.get(0), TipoAtraccion.valueOf(campos.get(1)),
-					Double.parseDouble(campos.get(2)),
-					/*arrayDeAtracciones = */new ArrayList<>(Arrays.asList(campos.get(3).split(",")))));
+					Double.parseDouble(campos.get(2)), new ArrayList<>(Arrays.asList(campos.get(3).split(",")))));
 
 		}
 		return promociones;
 	}
 
 	public void generarTicket(Cliente cliente) throws IOException {
-		PrintWriter salida = new PrintWriter(new FileWriter("res/salida/" + cliente.nombre + "_itinerario.txt"));		
-			salida.println(cliente.itinerario);
+		PrintWriter salida = new PrintWriter(new FileWriter("res/salida/" + cliente.nombre + "_itinerario.txt"));
+		salida.println(cliente.itinerario);
 		salida.close();
 	}
 }

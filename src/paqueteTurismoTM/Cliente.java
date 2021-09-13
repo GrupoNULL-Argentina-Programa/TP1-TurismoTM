@@ -12,7 +12,6 @@ public class Cliente {
 	protected Itinerario itinerario;
 
 	public Cliente(String nombre, TipoAtraccion preferencia, int presupuesto, double tiempo) {
-		super();
 		this.nombre = nombre;
 		this.preferencia = preferencia;
 		this.presupuesto = presupuesto;
@@ -20,17 +19,16 @@ public class Cliente {
 		itinerario = new Itinerario();
 	}
 
-	public void comprarOferta(Oferta unaOferta) {		
+	public void comprarOferta(Oferta unaOferta) {
 		descontarOroYTiempo(unaOferta);
 		this.itinerario.agregarAlItinerario(unaOferta);
-		
-	}	
+
+	}
 
 	private void descontarOroYTiempo(Oferta unaOferta) {
 		this.presupuesto -= unaOferta.getCosto();
 		this.tiempo -= unaOferta.getTiempo();
-		}
-
+	}
 
 	@Override
 	public String toString() {
@@ -49,25 +47,10 @@ public class Cliente {
 		laRespuesta = br.readLine();
 		laRespuesta = laRespuesta.toLowerCase();
 
-//		for (int intentos = 3; intentos >= 1; intentos--) {
-//			if (laRespuesta.equals("si") || laRespuesta.equals("s")) {
-//				r = true;
-//			} else if (laRespuesta.equals("no") || laRespuesta.equals("n")) {
-//				r = false;
-//			} else if (intentos > 1) {
-//				System.out.println(
-//						".. la respuesta ingresada es incorrecta, debe contestar con 'Si' o 'No' (intentos restantes "
-//								+ (intentos - 1) + ")");
-//				laRespuesta = br.readLine();
-//				laRespuesta = laRespuesta.toLowerCase();
-//			} else {
-//				System.out.println(".. intentos agotados, la oferta se rechazara automaticamente .. ");
-//			}
-//		}		
 		int intentos = 3;
 		int ans = -1;
-		
-		while(intentos >= 1 && ans == -1) {
+
+		while (intentos >= 1 && ans == -1) {
 			if (laRespuesta.equals("si") || laRespuesta.equals("s")) {
 				ans = 1;
 				r = true;

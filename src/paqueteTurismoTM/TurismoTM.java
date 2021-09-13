@@ -12,36 +12,11 @@ public class TurismoTM {
 
 		LectorDeFicheros lector = new LectorDeFicheros();
 		clientes = lector.cargarClientes();
-//		for (Cliente cliente : clientes) {
-//			System.out.println(cliente);
-//		}
-
-		// System.out.println();
-
-		// LectorDeFicheros lector1 = new LectorDeFicheros();
 		ofertas = lector.cargarAtraccion();
-//		for (Oferta atraccion : ofertas) {
-//			System.out.println(atraccion);
-//		}
-		// System.out.println();
 
-		// LectorDeFicheros lector2 = new LectorDeFicheros();
 		ofertas.addAll(lector.cargarPromocionAbsoluta());
-//		for (Oferta promocion : ofertas) {
-//			System.out.println(promocion);
-//		}
-
-		// LectorDeFicheros lector3 = new LectorDeFicheros();
 		ofertas.addAll(lector.cargarPromocionAxB());
-//		for (Oferta promocion : ofertas) {
-//			System.out.println(promocion);
-//		}
-
-		// LectorDeFicheros lector4 = new LectorDeFicheros();
 		ofertas.addAll(lector.cargarPromocionPorcentual());
-//		for (Oferta promocion : ofertas) {
-//			System.out.println(promocion);
-//		}
 
 		sugerenciaCliente();
 	}
@@ -52,7 +27,7 @@ public class TurismoTM {
 			boolean seguirOfreciendo = true;
 			Oferta unaOferta;
 
-			System.out.print(unCliente.nombre);
+			System.out.print("Hola " + unCliente.nombre);
 
 			mensajeBienvenida();
 			if (Ofertable.comprobarSiHayOferta()) {
@@ -63,6 +38,7 @@ public class TurismoTM {
 						mensajeQuieresComprarEsto(unaOferta);
 						if (unCliente.responderPregunta()) {
 							unCliente.comprarOferta(unaOferta);
+							System.out.print("¡Compra exitosa!");
 							Ofertable.quitarOfertasCompradasDos();
 							unaOferta.venderCupo();
 							mensajeQuieresVerOtraOferta();
@@ -74,42 +50,40 @@ public class TurismoTM {
 						}
 					} else {
 						mensajeNoPuedeComprarMas();
-						seguirOfreciendo=false;
+						seguirOfreciendo = false;
 					}
 				}
 			} else {
 				mensajeNoHayMasCupos();
 			}
-			System.out.println("Este serÃ¡ su itinerario: ");
+			System.out.println("Este será su itinerario: ");
 			System.out.println(unCliente.itinerario);
 			System.out.println();
 			LectorDeFicheros lector = new LectorDeFicheros();
 			lector.generarTicket(unCliente);
 		}
-		System.out.println("Fin del programa!");
+		System.out.println("¡Fin del programa!");
 	}
 
 	private static void mensajeNoPuedeComprarMas() {
-		System.out.println("Â¡No puede comprar mas!");
+		System.out.println("¡No puedes comprar más!");
 	}
 
 	private static void mensajeNoHayMasCupos() {
-		System.out.println("AtracciÃ³n sin cupo disponible, lo sentimos.");
+		System.out.println("Atracción sin cupo disponible, lo sentimos.");
 	}
 
 	private static void mensajeQuieresVerOtraOferta() {
-		System.out.println("Â¿Quieres ver otra oferta? S/N");
+		System.out.println("¿Quieres ver otra oferta? S/N");
 
 	}
 
 	private static void mensajeQuieresComprarEsto(Oferta unaOferta) {
-		System.out.println("Te recomendamos esta oferta, quieres comprarla? S/N");
+		System.out.println("Te recomendamos esta oferta, ¿quieres comprarla? S/N");
 		System.out.println(unaOferta);
 	}
 
 	private static void mensajeBienvenida() {
-		System.out.println(", te damos la bienvenida a Turismo en la Tierra Media!");
-
+		System.out.println(", ¡te damos la bienvenida a Turismo en la Tierra Media!");
 	}
-
 }

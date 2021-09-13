@@ -1,7 +1,6 @@
 package paqueteTurismoTM;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class Ofertable {
@@ -25,20 +24,15 @@ public class Ofertable {
 	}
 
 	public static boolean hayOfertaDisponible(Cliente unCliente) {
-
 		// ciclo que se repite cada vez que el cliente quiera seguir comprando
-
 		quitarOfertasQueNoPuedeComprar(unCliente);
 		quitarOfertasCompradas(unCliente);
-
 		// devuelve un booleano para saber si existe oferta para el mismo cliente
-		return (ofertasCopia.size()> 0);
+		return (ofertasCopia.size() > 0);
 	}
 
 	public static Oferta getOferta() {
-
 		return ofertasCopia.get(0);
-
 	}
 
 	public static void quitarOfertasSinCupo() {
@@ -58,8 +52,9 @@ public class Ofertable {
 	public static void quitarOfertasRechazadas() {
 		ofertasCopia.remove(0);
 	}
-	
+
 	public static void quitarOfertasCompradasDos() {
+		@SuppressWarnings("unchecked")
 		ArrayList<Oferta> copia = (ArrayList<Oferta>) ofertasCopia.clone();
 		if (copia.get(0) instanceof Promocion) {
 			Promocion unaPromo = (Promocion) copia.get(0);
@@ -71,12 +66,12 @@ public class Ofertable {
 					}
 				}
 			}
-
 		} else
 			ofertasCopia.remove(0);
 	}
 
 	public static void quitarOfertasQueNoPuedeComprar(Cliente unCliente) {
+		@SuppressWarnings("unchecked")
 		ArrayList<Oferta> copia = (ArrayList<Oferta>) ofertasCopia.clone();
 		for (Oferta ofertaImposible : copia) {
 			if (unCliente.presupuesto < ofertaImposible.getCosto() || unCliente.tiempo < ofertaImposible.getTiempo()) {

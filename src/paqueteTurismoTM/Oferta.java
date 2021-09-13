@@ -1,6 +1,6 @@
 package paqueteTurismoTM;
 
-public abstract class Oferta{
+public abstract class Oferta {
 	protected String nombre = "";
 	protected double tiempo;
 	protected TipoAtraccion tipoAtraccion;
@@ -16,14 +16,13 @@ public abstract class Oferta{
 
 	public TipoAtraccion getTipoAtraccion() {
 		return tipoAtraccion;
-	}	
+	}
 
 	protected abstract int getCuposDisponibles();
-	
+
 	public abstract void venderCupo();
 
 	protected abstract int getCosto();
 
 	protected abstract double getTiempo();
-
 }

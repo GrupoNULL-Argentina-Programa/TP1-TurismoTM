@@ -1,1 +1,1 @@
-Itinerario [ofertasCompradas=[Atraccion [nombre=Erebor, costo=12, tiempo=3.0, tipoAtraccion=PAISAJE, cuposDisponible=31], Atraccion [nombre=Abismo de Helm, costo=5, tiempo=2.0, tipoAtraccion=PAISAJE, cuposDisponible=14]], ofertasRechazadas=, montoTotal=0, horasTotales=0.0]
+Ofertas Compradas: [Atracción: Rivendell, Costo: 20, Duración: 4.0, Tipo: PAISAJE, Cupos Disponibles: 9, Atracción: Lothlorien, Costo: 35, Duración: 1.0, Tipo: DEGUSTACION, Cupos Disponibles: 29], Monto Total: 110, Horas Totales: 10.0
