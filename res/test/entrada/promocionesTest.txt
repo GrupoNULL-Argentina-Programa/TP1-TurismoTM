@@ -1,0 +1,3 @@
+PromocionAbsoluta 1;DEGUSTACION;36;Lothlorien,La Comarca
+PromocionAbsoluta 2;PAISAJE;15;Erebor,Minas Tirith
+PromocionAbsoluta 3;AVENTURA;30;Mordor,Moria
