@@ -1,12 +1,4 @@
-Itinerario [ofertasCompradas=[PromocionAbsoluta 1 contiene las siguientes atracciones de tipo [DEGUSTACION]:
+Ofertas Compradas: [PromocionAbsoluta 1 contiene las siguientes atracciones de tipo [DEGUSTACION]:
 	[Lothlorien, La Comarca]
 	Su costo total es de 36 monedas de oro
-	El tiempo total necesario es de 7.5 Hs., Promociones AxB1 contiene las siguientes atracciones de tipo[PAISAJE]:
-	[Minas Tirith, Abismo de Helm]
-	Su precio total es de 180 monedas de oro.
-	 Ademas son gratis las atracciones:
-	[Erebor]
-	Tiempo Total es de 7.5hs., PromocionAbsoluta 2 contiene las siguientes atracciones de tipo [PAISAJE]:
-	[Erebor, Minas Tirith]
-	Su costo total es de 15 monedas de oro
-	El tiempo total necesario es de 5.5 Hs., Atraccion [nombre=Mordor, costo=25, tiempo=3.0, tipoAtraccion=AVENTURA, cuposDisponible=3], Atraccion [nombre=Moria, costo=10, tiempo=2.0, tipoAtraccion=AVENTURA, cuposDisponible=4], Atraccion [nombre=Bosque Negro, costo=3, tiempo=4.0, tipoAtraccion=AVENTURA, cuposDisponible=11]], ofertasRechazadas=, montoTotal=0, horasTotales=0.0]
+	El tiempo total necesario es de 7.5 Hs.], Monto Total: 36, Horas Totales: 7.5

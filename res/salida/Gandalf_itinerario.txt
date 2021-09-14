@@ -1,1 +1,1 @@
-Ofertas Compradas: [Atracción: Rivendell, Costo: 20, Duración: 4.0, Tipo: PAISAJE, Cupos Disponibles: 9, Atracción: Lothlorien, Costo: 35, Duración: 1.0, Tipo: DEGUSTACION, Cupos Disponibles: 29], Monto Total: 110, Horas Totales: 10.0
+Ofertas Compradas: [Atracción: Rivendell, Costo: 20, Duración: 4.0, Tipo: PAISAJE, Cupos Disponibles: 9, Atracción: Lothlorien, Costo: 35, Duración: 1.0, Tipo: DEGUSTACION, Cupos Disponibles: 29], Monto Total: 55, Horas Totales: 5.0

@@ -12,16 +12,20 @@ public class Itinerario {
 	}
 
 	public int getMontoTotal() {
+		montoTotal=0;
 		for (Oferta oferta : ofertasCompradas) {
 			montoTotal += oferta.getCosto();
 		}
+		System.out.println(montoTotal);
 		return montoTotal;
 	}
 
 	public double getHorasTotales() {
+		horasTotales=0;
 		for (Oferta oferta : ofertasCompradas) {
 			horasTotales += oferta.getTiempo();
 		}
+		System.out.println(horasTotales);
 		return horasTotales;
 	}
 

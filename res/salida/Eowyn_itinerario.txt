@@ -1,1 +1,1 @@
-Ofertas Compradas: [], Monto Total: 0, Horas Totales: 0.0
+Ofertas Compradas: [Atracción: Moria, Costo: 10, Duración: 2.0, Tipo: AVENTURA, Cupos Disponibles: 5], Monto Total: 10, Horas Totales: 2.0

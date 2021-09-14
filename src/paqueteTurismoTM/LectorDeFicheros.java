@@ -7,11 +7,12 @@ import java.util.*;
 import java.io.*;
 
 public class LectorDeFicheros {
-	File archivo = null;
-	FileReader fr = null;
-	BufferedReader br = null;
 
-	public ArrayList<String> leerFichero(String directorio) {
+	public static ArrayList<String> leerFichero(String directorio) {
+
+		File archivo = null;
+		FileReader fr = null;
+		BufferedReader br = null;
 
 		ArrayList<String> arrayLineas = new ArrayList<String>();
 
@@ -105,7 +106,7 @@ public class LectorDeFicheros {
 
 	public void generarTicket(Cliente cliente) throws IOException {
 		PrintWriter salida = new PrintWriter(new FileWriter("res/salida/" + cliente.nombre + "_itinerario.txt"));
-		salida.println(cliente.itinerario);
+		salida.print(cliente.itinerario);
 		salida.close();
 	}
 }
