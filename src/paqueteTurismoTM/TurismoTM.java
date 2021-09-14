@@ -38,8 +38,8 @@ public class TurismoTM {
 						mensajeQuieresComprarEsto(unaOferta);
 						if (unCliente.responderPregunta()) {
 							unCliente.comprarOferta(unaOferta);
-							System.out.print("¡Compra exitosa!");
-							Ofertable.quitarOfertasCompradasDos();
+							System.out.print("ï¿½Compra exitosa!");
+							Ofertable.quitarOfertasCompradas();
 							unaOferta.venderCupo();
 							mensajeQuieresVerOtraOferta();
 							seguirOfreciendo = unCliente.responderPregunta();
@@ -56,34 +56,34 @@ public class TurismoTM {
 			} else {
 				mensajeNoHayMasCupos();
 			}
-			System.out.println("Este será su itinerario: ");
+			System.out.println("Este serï¿½ su itinerario: ");
 			System.out.println(unCliente.itinerario);
 			System.out.println();
 			LectorDeFicheros lector = new LectorDeFicheros();
 			lector.generarTicket(unCliente);
 		}
-		System.out.println("¡Fin del programa!");
+		System.out.println("ï¿½Fin del programa!");
 	}
 
 	private static void mensajeNoPuedeComprarMas() {
-		System.out.println("¡No puedes comprar más!");
+		System.out.println("ï¿½No puedes comprar mï¿½s!");
 	}
 
 	private static void mensajeNoHayMasCupos() {
-		System.out.println("Atracción sin cupo disponible, lo sentimos.");
+		System.out.println("Atracciï¿½n sin cupo disponible, lo sentimos.");
 	}
 
 	private static void mensajeQuieresVerOtraOferta() {
-		System.out.println("¿Quieres ver otra oferta? S/N");
+		System.out.println("ï¿½Quieres ver otra oferta? S/N");
 
 	}
 
 	private static void mensajeQuieresComprarEsto(Oferta unaOferta) {
-		System.out.println("Te recomendamos esta oferta, ¿quieres comprarla? S/N");
+		System.out.println("Te recomendamos esta oferta, ï¿½quieres comprarla? S/N");
 		System.out.println(unaOferta);
 	}
 
 	private static void mensajeBienvenida() {
-		System.out.println(", ¡te damos la bienvenida a Turismo en la Tierra Media!");
+		System.out.println(", ï¿½te damos la bienvenida a Turismo en la Tierra Media!");
 	}
 }

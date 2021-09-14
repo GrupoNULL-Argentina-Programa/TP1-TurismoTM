@@ -48,17 +48,17 @@ public class Ofertable {
 		}
 	}
 
-	public static void quitarOfertasCompradas(Cliente unCliente) {
-		for (Oferta ofertaComprada : unCliente.itinerario.ofertasCompradas) {
-			ofertasCopia.remove(ofertaComprada);
-		}
-	}
+//	public static void quitarOfertasCompradas(Cliente unCliente) {
+//		for (Oferta ofertaComprada : unCliente.itinerario.ofertasCompradas) {
+//			ofertasCopia.remove(ofertaComprada);
+//		}
+//	}
 
 	public static void quitarOfertasRechazadas() {
 		ofertasCopia.remove(0);
 	}
 
-	public static void quitarOfertasCompradasDos() {
+	public static void quitarOfertasCompradas() {
 		@SuppressWarnings("unchecked")
 		ArrayList<Oferta> copia = (ArrayList<Oferta>) ofertasCopia.clone();
 		if (copia.get(0) instanceof Promocion) {
