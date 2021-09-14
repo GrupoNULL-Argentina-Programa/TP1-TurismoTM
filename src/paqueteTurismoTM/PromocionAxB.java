@@ -4,19 +4,20 @@ import java.util.ArrayList;
 
 public class PromocionAxB extends Promocion {
 
-	public ArrayList<String> atraccionesGratis;
-
-	public PromocionAxB(String nombre, TipoAtraccion tipoAtraccion, ArrayList<String> atracciones,
-			ArrayList<String> atraccionesGratis) {
+	public String atraccionGratis;
+	
+	public PromocionAxB(String nombre, TipoAtraccion tipoAtraccion, ArrayList<String> atracciones) {
 		super(nombre, tipoAtraccion, atracciones);
-		this.atraccionesGratis = atraccionesGratis;
+		this.atraccionGratis = atracciones.get(atracciones.size()-1);
 	}
+
 
 	@Override
 	public int getCosto() {
-		for (String a : atracciones) {
+		costo = 0;
+		for (int i = 0; i < atracciones.size()-1; i++) {			
 			for (Oferta b : TurismoTM.ofertas) {
-				if (a.equals(b.nombre)) {
+				if (atracciones.get(i).equals(b.nombre)) {
 					costo += b.getCosto();
 				}
 			}
@@ -24,30 +25,27 @@ public class PromocionAxB extends Promocion {
 		return (int) costo;
 	}
 
-	public double getTiempo() {
-		double tiempoTotal = 0;
+	
+	@Override
+	public int getCuposDisponibles() {
+		int cupoDisponible = 9999;
 		for (String a : atracciones) {
 			for (Oferta b : TurismoTM.ofertas) {
 				if (a.equals(b.nombre)) {
-					tiempoTotal += b.tiempo;
+					if (b.getCuposDisponibles() < cupoDisponible) {
+						cupoDisponible = b.getCuposDisponibles();
+					}
 				}
 			}
 		}
-		for (String a : atraccionesGratis) {
-			for (Oferta b : TurismoTM.ofertas) {
-				if (a.equals(b.nombre)) {
-					tiempoTotal += b.tiempo;
-				}
-			}
-		}
-		return tiempoTotal;
+		return cupoDisponible;
 	}
 
 	@Override
 	public String toString() {
 		return "" + this.nombre + " contiene las siguientes atracciones de tipo" + "[" + tipoAtraccion + "]:" + "\n\t"
 				+ this.atracciones + "\n\tSu precio total es de " + this.getCosto() + " monedas de oro."
-				+ "\n\t Ademas son gratis las atracciones:\n\t" + this.atraccionesGratis + "\n\tTiempo Total es de "
+				+ "\n\t Siendo la atracción gratis:\n\t" + this.atraccionGratis + "\n\tTiempo Total es de "
 				+ this.getTiempo() + "hs.";
 	}
 }

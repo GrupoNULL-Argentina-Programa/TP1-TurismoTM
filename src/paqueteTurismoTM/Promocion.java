@@ -18,7 +18,7 @@ public abstract class Promocion extends Oferta {
 	}
 
 	public double getTiempo() {
-		double tiempoTotal = 0;
+		tiempoTotal = 0;
 		for (String a : atracciones) {
 			for (Oferta b : TurismoTM.ofertas) {
 				if (a.equals(b.nombre)) {
@@ -47,7 +47,7 @@ public abstract class Promocion extends Oferta {
 			for (Oferta b : TurismoTM.ofertas) {
 				if (a.equals(b.nombre)) {
 					if (b.getCuposDisponibles() < cupoDisponible) {
-						cupoDisponible = b.getCosto();
+						cupoDisponible = b.getCuposDisponibles();
 					}
 				}
 			}

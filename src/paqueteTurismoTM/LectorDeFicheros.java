@@ -53,7 +53,6 @@ public class LectorDeFicheros {
 		return clientes;
 	}
 
-	// Estos metodos no serian responsabilidad de tierra media?
 	public ArrayList<Oferta> cargarAtraccion() {
 		ArrayList<String> arrayDeAtracciones = leerFichero("res/entrada/atracciones.txt");
 		ArrayList<Oferta> atracciones = new ArrayList<Oferta>();
@@ -86,8 +85,7 @@ public class LectorDeFicheros {
 		for (int i = 0; i < arrayDePromAxB.size(); i++) {
 			ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDePromAxB.get(i).split(";")));
 			promociones.add(new PromocionAxB(campos.get(0), TipoAtraccion.valueOf(campos.get(1)),
-					new ArrayList<>(Arrays.asList(campos.get(2).split(","))),
-					new ArrayList<>(Arrays.asList(campos.get(3).split(",")))));
+					new ArrayList<>(Arrays.asList(campos.get(2).split(",")))));
 		}
 		return promociones;
 	}

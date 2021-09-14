@@ -8,17 +8,20 @@ public class Ofertable {
 	static ArrayList<Oferta> ofertasCopia = new ArrayList<Oferta>();
 
 	public static void ordenarOfertas(TipoAtraccion preferencia) {
+//		System.out.println("************************");
 		Collections.sort(ofertasCopia, new ComparadorDeOfertas(preferencia));
+//		for (Oferta oferta : ofertasCopia) {			
+//			System.out.println(oferta);
+//		}
+//		System.out.println("************************");
 	}
 
 	public static boolean comprobarSiHayOferta() {
 		// Reiniciar la copia por cada nuevo cliente
 		ofertasCopia.removeAll(ofertasCopia);
-		// Hacer la copia como corresponde
 		for (Oferta unaOferta : TurismoTM.ofertas) {
 			ofertasCopia.add(unaOferta);
 		}
-		// quitar todas las ofertas sin cupo de la copia
 		quitarOfertasSinCupo();
 		return (TurismoTM.ofertas != null);
 	}
@@ -26,7 +29,7 @@ public class Ofertable {
 	public static boolean hayOfertaDisponible(Cliente unCliente) {
 		// ciclo que se repite cada vez que el cliente quiera seguir comprando
 		quitarOfertasQueNoPuedeComprar(unCliente);
-		quitarOfertasCompradas(unCliente);
+//		quitarOfertasCompradas(unCliente);
 		// devuelve un booleano para saber si existe oferta para el mismo cliente
 		return (ofertasCopia.size() > 0);
 	}
@@ -36,7 +39,9 @@ public class Ofertable {
 	}
 
 	public static void quitarOfertasSinCupo() {
-		for (Oferta unaOferta : ofertasCopia) {
+		@SuppressWarnings("unchecked")
+		ArrayList<Oferta> copia = (ArrayList<Oferta>) ofertasCopia.clone();
+		for (Oferta unaOferta : copia) {
 			if (unaOferta.getCuposDisponibles() <= 0) {
 				ofertasCopia.remove(unaOferta);
 			}
@@ -61,12 +66,21 @@ public class Ofertable {
 			ArrayList<String> atraccionesCompradas = unaPromo.getAtracciones();
 			for (String a : atraccionesCompradas) {
 				for (Oferta b : copia) {
-					if (a.equals(b.nombre)) {
+					if (b instanceof Promocion) {
+						Promocion otraPromo = (Promocion) b;
+						ArrayList<String> atraccionesIncluidas = otraPromo.getAtracciones();
+						for (String c : atraccionesIncluidas) {
+							if (a.equals(c)) {
+								ofertasCopia.remove(b);
+							}
+						}
+					} 
+					else if (a.equals(b.nombre)) {
 						ofertasCopia.remove(b);
 					}
 				}
 			}
-		} else
+		} else 
 			ofertasCopia.remove(0);
 	}
 

@@ -17,18 +17,6 @@ public class ItinerarioTest {
 	public ArrayList<Cliente> cliente = new ArrayList<Cliente>();
 	public ArrayList<Oferta> ofertasCompradas = new ArrayList<Oferta>();
 	
-	public ArrayList<Oferta> cargarAtraccion() {
-		ArrayList<String> arrayDeAtracciones = LectorDeFicheros.leerFichero("res/entrada/atracciones.txt");
-		ArrayList<Oferta> atracciones = new ArrayList<Oferta>();
-		for (int i = 0; i < arrayDeAtracciones.size(); i++) {
-			ArrayList<String> campos = new ArrayList<>(Arrays.asList(arrayDeAtracciones.get(i).split(";")));
-			atracciones.add(
-					new Atraccion(campos.get(0), Integer.parseInt(campos.get(1)), Double.parseDouble(campos.get(2)),
-							Integer.parseInt(campos.get(3)), TipoAtraccion.valueOf(campos.get(4))));
-		}
-		return atracciones;
-		}
-
 	public ArrayList<Oferta> cargarPromocionAbsoluta() {
 		ArrayList<String> arrayDePromAbs = LectorDeFicheros.leerFichero("res/test/entrada/promocionesTest.txt");
 		ArrayList<Oferta> promociones = new ArrayList<Oferta>();
