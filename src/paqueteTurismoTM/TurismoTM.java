@@ -84,8 +84,7 @@ public class TurismoTM {
 	}
 
 	private static void mensajeQuieresComprarEsto(Oferta unaOferta) {
-		System.out.println("Te recomendamos esta oferta, ¿Quieres comprarla? S/N");
-		System.out.println(unaOferta);
+		System.out.println("Te recomendamos esta oferta\n" + unaOferta + "\n\n¿Quieres comprarla? S/N");
 	}
 
 	private static void mensajeBienvenida(Cliente unCliente) {
