@@ -35,7 +35,7 @@ public abstract class Promocion extends Oferta {
 
 	public void venderCupo() {
 		for (String a : atracciones) {
-			for (Oferta b : new LectorDeFicheros().cargarAtracciones())
+			for (Oferta b : TurismoTM.ofertas)
 				if (a.equals(b.nombre))
 					b.venderCupo();
 		}
