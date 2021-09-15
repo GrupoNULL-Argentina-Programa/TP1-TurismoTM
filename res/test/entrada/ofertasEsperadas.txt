@@ -1,1 +1,40 @@
-[PromocionAbsoluta 3 contiene las siguientes atracciones de tipo [AVENTURA]:[Mordor, Moria]Su costo total es de 30 monedas de oroEl tiempo total necesario es de 5.0 Hs., Atracción: Mordor, Costo: 25, Duración: 3.0, Tipo: AVENTURA, Cupos Disponibles: 1, Atracción: Moria, Costo: 10, Duración: 2.0, Tipo: AVENTURA, Cupos Disponibles: 0, PromocionAbsoluta 1 contiene las siguientes atracciones de tipo [DEGUSTACION]:[Lothlorien, La Comarca]Su costo total es de 36 monedas de oroEl tiempo total necesario es de 7.5 Hs., PromocionAbsoluta 2 contiene las siguientes atracciones de tipo [PAISAJE]:[Isengard, Minas Tirith]Su costo total es de 15 monedas de oroEl tiempo total necesario es de 5.5 Hs., Atracción: Lothlorien, Costo: 35, Duración: 1.0, Tipo: DEGUSTACION, Cupos Disponibles: 0, Atracción: Isengard, Costo: 10, Duración: 3.0, Tipo: DEGUSTACION, Cupos Disponibles: 25, Atracción: Minas Tirith, Costo: 5, Duración: 2.5, Tipo: PAISAJE, Cupos Disponibles: 25, Atracción: La Comarca, Costo: 3, Duración: 6.5, Tipo: DEGUSTACION, Cupos Disponibles: 150]
+[PromocionAbsoluta 3 contiene las siguientes atracciones de tipo [AVENTURA]:
+	[Mordor, Moria]
+	Su costo total es de 30 monedas de oro
+	El tiempo total necesario es de 5.0 Hs., 
+Atraccion: Mordor
+Costo: 25
+Duración: 3.0
+Tipo: AVENTURA
+Cupos Disponibles: 1, 
+Atraccion: Moria
+Costo: 10
+Duración: 2.0
+Tipo: AVENTURA
+Cupos Disponibles: 0, PromocionAbsoluta 1 contiene las siguientes atracciones de tipo [DEGUSTACION]:
+	[Lothlorien, La Comarca]
+	Su costo total es de 36 monedas de oro
+	El tiempo total necesario es de 7.5 Hs., PromocionAbsoluta 2 contiene las siguientes atracciones de tipo [PAISAJE]:
+	[Isengard, Minas Tirith]
+	Su costo total es de 15 monedas de oro
+	El tiempo total necesario es de 5.5 Hs., 
+Atraccion: Lothlorien
+Costo: 35
+Duración: 1.0
+Tipo: DEGUSTACION
+Cupos Disponibles: 0, 
+Atraccion: Isengard
+Costo: 10
+Duración: 3.0
+Tipo: DEGUSTACION
+Cupos Disponibles: 25, 
+Atraccion: Minas Tirith
+Costo: 5
+Duración: 2.5
+Tipo: PAISAJE
+Cupos Disponibles: 25, 
+Atraccion: La Comarca
+Costo: 3
+Duración: 6.5
+Tipo: DEGUSTACION
+Cupos Disponibles: 150]
