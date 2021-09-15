@@ -2,9 +2,12 @@ package paqueteTurismoTM;
 
 import static org.junit.Assert.*;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,6 +34,7 @@ public class ItinerarioTest {
 		return promociones;
 	}
 
+	@SuppressWarnings("resource")
 	@Test
 	public void salidaTest() throws IOException {
 		LectorDeFicheros lector = new LectorDeFicheros();
@@ -41,9 +45,22 @@ public class ItinerarioTest {
 		cliente.comprarOferta(ofertas.get(2));
 		
 		lector.generarTicket(cliente);
+	
+		
+		@SuppressWarnings("unused")
+		PrintWriter salida = new PrintWriter(new FileWriter("res/test/salida/Pippin_itinerario_test.txt"));
+		
+        Path itinerarioSalida = Path.of("res/salida/Pippin_itinerario.txt");
+    	Path itinerarioSalidaTest = Path.of("res/salida/Pippin_itinerario_test.txt");        
+		
+		String sinSecuenciasDeEscape = Files.readString(itinerarioSalida);
+
+		sinSecuenciasDeEscape = sinSecuenciasDeEscape.replace("\n", "").replace("\t", "");	
+		
+		Files.writeString(itinerarioSalidaTest, sinSecuenciasDeEscape);
 
 		byte[] itinerario1Bytes = Files.readAllBytes(Paths.get("res/test/salida/promocionesSalidaTest.txt"));
-		byte[] itinerario2Bytes = Files.readAllBytes(Paths.get("res/salida/Pippin_itinerario.txt"));
+		byte[] itinerario2Bytes = Files.readAllBytes(Paths.get("res/salida/Pippin_itinerario_test.txt"));
 
 		String itinerario1 = new String(itinerario1Bytes, StandardCharsets.UTF_8);
 		String itinerario2 = new String(itinerario2Bytes, StandardCharsets.UTF_8);

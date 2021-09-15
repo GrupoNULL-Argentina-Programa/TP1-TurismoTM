@@ -1,0 +1,10 @@
+Ofertas Compradas: 
+[PromocionAbsoluta 2 contiene las siguientes atracciones de tipo [PAISAJE]:
+	[Erebor, Minas Tirith]
+	Su costo total es de 15 monedas de oro
+	El tiempo total necesario es de 5.5 Hs., Atraccion: Rivendell
+Costo: 20
+Duración: 4.0
+Tipo: PAISAJE
+Cupos Disponibles: 7]
+Monto Total: 35, Horas Totales: 9.5

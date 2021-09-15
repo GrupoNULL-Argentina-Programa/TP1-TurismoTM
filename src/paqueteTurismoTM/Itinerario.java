@@ -33,7 +33,7 @@ public class Itinerario {
 
 	@Override
 	public String toString() {
-		return "Ofertas Compradas: " + ofertasCompradas + ", Monto Total: " + getMontoTotal() + ", Horas Totales: "
+		return "Ofertas Compradas: " + "\n"+ofertasCompradas + "\nMonto Total: " + getMontoTotal() + ", Horas Totales: "
 				+ getHorasTotales();
 	}
 }
