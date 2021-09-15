@@ -8,22 +8,21 @@ public class Ofertable {
 	static ArrayList<Oferta> ofertasCopia = new ArrayList<Oferta>();
 
 	public static void ordenarOfertas(TipoAtraccion preferencia) {
-//		System.out.println("************************");
 		Collections.sort(ofertasCopia, new ComparadorDeOfertas(preferencia));
-//		for (Oferta oferta : ofertasCopia) {			
-//			System.out.println(oferta);
-//		}
-//		System.out.println("************************");
 	}
 
 	public static boolean comprobarSiHayOferta() {
+		resetearArrayCopia();
+		quitarOfertasSinCupo();
+		return (TurismoTM.ofertas != null);
+	}
+
+	public static void resetearArrayCopia() {
 		// Reiniciar la copia por cada nuevo cliente
 		ofertasCopia.removeAll(ofertasCopia);
 		for (Oferta unaOferta : TurismoTM.ofertas) {
 			ofertasCopia.add(unaOferta);
 		}
-		quitarOfertasSinCupo();
-		return (TurismoTM.ofertas != null);
 	}
 
 	public static boolean hayOfertaDisponible(Cliente unCliente) {
@@ -74,13 +73,12 @@ public class Ofertable {
 								ofertasCopia.remove(b);
 							}
 						}
-					} 
-					else if (a.equals(b.nombre)) {
+					} else if (a.equals(b.nombre)) {
 						ofertasCopia.remove(b);
 					}
 				}
 			}
-		} else 
+		} else
 			ofertasCopia.remove(0);
 	}
 

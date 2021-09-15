@@ -107,4 +107,14 @@ public class LectorDeFicheros {
 		salida.print(cliente.itinerario);
 		salida.close();
 	}
+	
+	
+	public static void eliminarArchivoDeSalida(File archivo) {
+		if (!archivo.exists()) {
+			System.out.println("El archivo no existe");
+		}
+		else {
+			archivo.delete();
+		}
+	}
 }
