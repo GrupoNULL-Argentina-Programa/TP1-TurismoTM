@@ -1,2 +1,2 @@
-Promociones AxB1;PAISAJE;Minas Tirith,Abismo de Helm;Erebor
-Promociones AxB2;AVENTURA;Moria,Mordor;Bosque Negro
+Promociones AxB1;PAISAJE;Minas Tirith,Abismo de Helm,Erebor
+Promociones AxB2;AVENTURA;Moria,Mordor,Bosque Negro

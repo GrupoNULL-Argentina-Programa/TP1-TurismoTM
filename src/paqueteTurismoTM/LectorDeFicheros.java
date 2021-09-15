@@ -53,7 +53,7 @@ public class LectorDeFicheros {
 		return clientes;
 	}
 
-	public ArrayList<Oferta> cargarAtraccion() {
+	public ArrayList<Oferta> cargarAtracciones() {
 		ArrayList<String> arrayDeAtracciones = leerFichero("res/entrada/atracciones.txt");
 		ArrayList<Oferta> atracciones = new ArrayList<Oferta>();
 		for (int i = 0; i < arrayDeAtracciones.size(); i++) {

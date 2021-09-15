@@ -20,7 +20,7 @@ public abstract class Promocion extends Oferta {
 	public double getTiempo() {
 		tiempoTotal = 0;
 		for (String a : atracciones) {
-			for (Oferta b : TurismoTM.ofertas) {
+			for (Oferta b : new LectorDeFicheros().cargarAtracciones()) {
 				if (a.equals(b.nombre)) {
 					tiempoTotal += b.tiempo;
 				}
@@ -35,7 +35,7 @@ public abstract class Promocion extends Oferta {
 
 	public void venderCupo() {
 		for (String a : atracciones) {
-			for (Oferta b : TurismoTM.ofertas)
+			for (Oferta b : new LectorDeFicheros().cargarAtracciones())
 				if (a.equals(b.nombre))
 					b.venderCupo();
 		}

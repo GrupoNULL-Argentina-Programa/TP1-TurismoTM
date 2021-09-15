@@ -39,7 +39,7 @@ public class ItinerarioTest {
 	public void salidaTest() throws IOException {
 		LectorDeFicheros lector = new LectorDeFicheros();
 		TurismoTM turismo = new TurismoTM();
-		turismo.ofertas=lector.cargarAtraccion();
+		turismo.ofertas=lector.cargarAtracciones();
 		Cliente cliente = new Cliente("Pippin", TipoAtraccion.AVENTURA, 80, 12);
 		ofertas = this.cargarPromocionAbsoluta();
 		cliente.comprarOferta(ofertas.get(2));

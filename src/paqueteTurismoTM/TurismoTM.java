@@ -12,7 +12,7 @@ public class TurismoTM {
 
 		LectorDeFicheros lector = new LectorDeFicheros();
 		clientes = lector.cargarClientes();
-		ofertas = lector.cargarAtraccion();
+		ofertas = lector.cargarAtracciones();
 
 		ofertas.addAll(lector.cargarPromocionAbsoluta());
 		ofertas.addAll(lector.cargarPromocionAxB());
@@ -79,12 +79,12 @@ public class TurismoTM {
 	}
 
 	private static void mensajeQuieresVerOtraOferta() {
-		System.out.println("¡Quieres ver otra oferta? S/N");
+		System.out.println("¿Quieres ver otra oferta? S/N");
 
 	}
 
 	private static void mensajeQuieresComprarEsto(Oferta unaOferta) {
-		System.out.println("Te recomendamos esta oferta, ¡quieres comprarla? S/N");
+		System.out.println("Te recomendamos esta oferta, ¿Quieres comprarla? S/N");
 		System.out.println(unaOferta);
 	}
 
@@ -93,7 +93,7 @@ public class TurismoTM {
 		
 		System.out.println("<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>");
 		System.out.print("Hola " + unCliente.nombre);
-		System.out.println(", ¡te damos la bienvenida a Turismo en la Tierra Media!");
+		System.out.println(", ¡Te damos la bienvenida a Turismo en la Tierra Media!");
 	}
 	
 	private static void mensajeInicial() {

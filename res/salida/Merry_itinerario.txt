@@ -1,1 +1,3 @@
-Ofertas Compradas: [], Monto Total: 0, Horas Totales: 0.0
+Ofertas Compradas: 
+[]
+Monto Total: 0, Horas Totales: 0.0

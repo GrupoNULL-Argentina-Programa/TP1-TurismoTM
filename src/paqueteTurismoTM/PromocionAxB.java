@@ -16,7 +16,7 @@ public class PromocionAxB extends Promocion {
 	public int getCosto() {
 		costo = 0;
 		for (int i = 0; i < atracciones.size()-1; i++) {			
-			for (Oferta b : TurismoTM.ofertas) {
+			for (Oferta b : new LectorDeFicheros().cargarAtracciones()) {
 				if (atracciones.get(i).equals(b.nombre)) {
 					costo += b.getCosto();
 				}
