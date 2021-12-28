@@ -1,3 +1,8 @@
 Ofertas Compradas: 
-[]
-Monto Total: 0, Horas Totales: 0.0
+[
+Atraccion: Rivendell
+Costo: 20
+Duración: 4.0
+Tipo: PAISAJE
+Cupos Disponibles: 9]
+Monto Total: 20, Horas Totales: 4.0
